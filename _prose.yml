@@ -10,6 +10,7 @@ prose:
         field:
           element: "multiselect"
           label: "Author"
+          alterable: true
           options:
             - name: 'Group 1'
               value: 'Group 1'
