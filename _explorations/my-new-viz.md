@@ -1,6 +1,9 @@
 ---
 layout: post
 published: true
+author:
+  - Group 1
+  - ciao
 ---
 ## A New Post
 
