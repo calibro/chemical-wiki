@@ -21,3 +21,5 @@ collections:
 
 # Build settings
 markdown: kramdown
+gems:
+  - jemoji
