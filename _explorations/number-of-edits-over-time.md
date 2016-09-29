@@ -11,6 +11,7 @@ tools:
 datasources:
   - Wikipedia
   - '[test link](http://kramdown.gettalong.org)'
+title: Number of edits over time
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
