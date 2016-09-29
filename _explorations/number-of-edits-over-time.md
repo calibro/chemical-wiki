@@ -21,11 +21,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 
 ### How the map is built
 
+{:refdef: .protocol}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
+
 1. step bla bla
 2. step etc
-^
-{: .protocol}
+{: refdef}
 
 ### Bias(es) and findings
 
