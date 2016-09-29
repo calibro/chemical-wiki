@@ -44,3 +44,9 @@ prose:
           label: "Data source(s)"
           alterable: true
           options:
+      - name: "datafiles"
+        field:
+          element: "multiselect"
+          label: "Data file(s)"
+          alterable: true
+          options:

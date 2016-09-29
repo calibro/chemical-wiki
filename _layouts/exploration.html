@@ -5,17 +5,17 @@ layout: default
   <div class="row">
     <div class="col-sm-6">
       <h1>{{ page.title }}</h1>
+      {{ content }}
+    </div>
+    <div class="col-sm-6">
       <h6>Category:</h6>
       <p>
          {{ page.category }}
       </p>
-      {{ content }}
-    </div>
-    <div class="col-sm-6">
       <h6>Authors:</h6>
       <p>
         <ul>
-          {% for author in authors %}
+          {% for author in page.authors %}
             <li>
               {{ author }}
             </li>
@@ -25,7 +25,7 @@ layout: default
       <h6>Tools:</h6>
       <p>
         <ul>
-          {% for tool in tools %}
+          {% for tool in page.tools %}
             <li>
               {{ tool }}
             </li>
@@ -35,7 +35,7 @@ layout: default
       <h6>Data source(s):</h6>
       <p>
         <ul>
-          {% for datasource in datasources %}
+          {% for datasource in page.datasources %}
             <li>
               {{ datasource | markdownify }}
             </li>
@@ -45,7 +45,7 @@ layout: default
       <h6>Data file(s):</h6>
       <p>
         <ul>
-          {% for datafile in datafiles %}
+          {% for datafile in page.datafiles %}
             <li>
               {{ datafile | markdownify }}
             </li>
