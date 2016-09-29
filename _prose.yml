@@ -5,16 +5,42 @@ prose:
       - name: "layout"
         field:
           element: "hidden"
-          value: "post"
-      - name: "author"
+          value: "exploration"
+      - name: "category"
+        field:
+          element: "select"
+          label: "Category"
+          options:
+            - name: Medical risks and benefits
+              value: medical
+            - name: Designer drugs
+              value: designer
+      - name: "authors"
         field:
           element: "multiselect"
-          label: "Author"
+          label: "Author(s)"
+          options:
+            - Lisa Krieg
+            - Moritz Berning
+            - Aleksi Hupli
+            - Matteo Azzi
+            - Giorgio Uboldi
+            - Gabriele Colombo
+            - Louis Dijkstra
+            - Natalia Sanchez-Querubin
+      - name: "tools"
+        field:
+          element: "multiselect"
+          label: "Tool(s)"
           alterable: true
           options:
-            - name: 'Group 1'
-              value: 'Group 1'
-            - name: 'Group 2'
-              value: 'Group 2'
-            - name: 'Group 3'
-              value: 'Group 3'
+            - Gephi
+            - Illustrator
+            - Raw
+            - Tableau
+      - name: "datasources"
+        field:
+          element: "multiselect"
+          label: "Data source(s)"
+          alterable: true
+          options:

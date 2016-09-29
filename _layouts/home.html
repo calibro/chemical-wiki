@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      {{ content }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      {% for page in site.pages %}
+        {% if page.id == 'medical' %}
+          <h1>{{page.title}}</h1>
+          <p>
+            <a href="{{page.url | prepend: site.baseurl}}">explore</a>
+          </p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-sm-6">
+      {% for page in site.pages %}
+        {% if page.id == 'designer' %}
+          <h1>{{page.title}}</h1>
+          <p>
+            <a href="{{page.url | prepend: site.baseurl}}">explore</a>
+          </p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

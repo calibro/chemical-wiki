@@ -2,6 +2,7 @@
 layout: post
 published: false
 title: test visualization
+category: designer
 author:
   - Group 1
 ---

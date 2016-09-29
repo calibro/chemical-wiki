@@ -1,6 +1,7 @@
 ---
 layout: post
-published: true
+published: false
+category: medical
 author:
   - Group 1
   - ciao
