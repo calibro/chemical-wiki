@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 authors:
   - Lisa Krieg
   - Giorgio Uboldi
@@ -33,4 +33,3 @@ In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante 
 
 [^1]: And here is the definition.
 {: .references}
-
