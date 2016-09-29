@@ -1,5 +1,6 @@
 prose:
   media: 'media'
+  ignore: ['_includes', '_layouts','_posts','assets','css','js','media','_config.yml','_prose.yml','.gitignore.yml','feed.xml']
   metadata:
     _explorations:
       - name: "layout"
