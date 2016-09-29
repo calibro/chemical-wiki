@@ -6,6 +6,10 @@ prose:
         field:
           element: "hidden"
           value: "exploration"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
       - name: "category"
         field:
           element: "select"
