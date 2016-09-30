@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 title: Evolution of title of the article “MDMA”
 authors:
   - Aleksi Hupli
