@@ -3,12 +3,11 @@ layout: exploration
 category: medical
 published: true
 title: Page size over time
-authors:
-  - Matteo Azzi
-  - Gabriele Colombo
-  - Natalia Sanchez-Querubin
 tools:
   - Raw
+authors:
+  - Giorgio Uboldi
+  - Gabriele Colombo
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
@@ -41,4 +40,3 @@ In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante 
 
 [^1]: And here is the definition.
 </div>
-
