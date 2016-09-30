@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 title: Ayahuasca TOC evolution over time
 authors:
   - Lisa Krieg

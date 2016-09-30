@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 title: MDMA TOC evolution over time
 authors:
   - Lisa Krieg

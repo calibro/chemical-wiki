@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: designer
-published: false
+published: true
 title: Editors network
 authors:
   - Louis Dijkstra

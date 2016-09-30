@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 title: 'Ayahuasca references: hosts mention overtime'
 authors:
   - Gabriele Colombo

@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: designer
-published: false
+published: true
 title: Metrics of the designer drugs
 authors:
   - Giorgio Uboldi

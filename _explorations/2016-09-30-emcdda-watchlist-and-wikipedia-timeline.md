@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: designer
-published: false
+published: true
 title: EMCDDA watchlist and Wikipedia timeline
 authors:
   - Giorgio Uboldi

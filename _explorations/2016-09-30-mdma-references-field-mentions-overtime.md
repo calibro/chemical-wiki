@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 title: 'MDMA references: field mentions overtime'
 authors:
   - Gabriele Colombo

@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: designer
-published: false
+published: true
 title: Network of co-contribution on designer drug articles
 authors:
   - Louis Dijkstra
