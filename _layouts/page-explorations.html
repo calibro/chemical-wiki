@@ -8,18 +8,18 @@ layout: default
       {{ content }}
     </div>
   </div>
-  <div class="row">
     {% assign explorations = site.explorations | where: "category", page.id %}
     {% for exploration in explorations %}
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <!-- <img src="..." alt="..."> -->
-        <div class="caption">
-          <h3>{{ exploration.title }}</h3>
-          <p><a href="{{ exploration.url | prepend: site.baseurl }}" class="btn btn-default" role="button">explore</a></p>
-        </div>
-      </div>
-    </div>
+        {% cycle 'add row' : '<div class="row">', nil, nil %}
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                  <!-- <img src="..." alt="..."> -->
+                  <div class="caption">
+                    <h3>{{ exploration.title }}</h3>
+                    <p><a href="{{ exploration.url | prepend: site.baseurl }}" class="btn btn-default" role="button">explore</a></p>
+                  </div>
+                </div>
+            </div>
+        {% cycle 'end row' : nil, nil, '</div>' %}
     {% endfor %}
-  </div>
 </div>
