@@ -7,10 +7,6 @@ prose:
         field:
           element: "hidden"
           value: "exploration"
-      - name: "published"
-        field:
-          element: "hidden"
-          value: "true"
       - name: "title"
         field:
           element: "text"
