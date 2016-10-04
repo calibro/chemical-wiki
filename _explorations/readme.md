@@ -2,10 +2,10 @@
 
 1. Go to [http://prose.io/#calibro/chemical-wiki/tree/master/_explorations](http://prose.io/#calibro/chemical-wiki/tree/master/_explorations)
 2. Click on ![new_file.png](../media/new_file.png) button
-3. Copy and paste the tamplate attached below
-4. On the right click on the metadata button and fill the forms
-5. Click on the save button and than on commit
-6. Refresh the page and click on the publish button on the top right
+3. Copy and paste the tamplate attached [below](https://github.com/calibro/chemical-wiki/blob/master/_explorations/readme.md#template)
+4. On the right click on the metadata button ![metadata.png](../media/metadata.png) and fill the forms
+5. Click on the save button ![save.png](../media/save.png) and than on commit changes ![commit.png](../media/commit.png)
+6. Refresh the page and click on the publish/unpublish button on the top right ![publish.png](../media/publish.png) and commit again
 
 ### Template
 ```html
