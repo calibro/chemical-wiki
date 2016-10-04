@@ -1,7 +1,7 @@
 ---
 layout: exploration
 category: medical
-published: false
+published: true
 title: readme.md
 ---
 ## Add articles
@@ -38,4 +38,3 @@ title: readme.md
 
 </div>
 ```
-
