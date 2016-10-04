@@ -7,14 +7,13 @@
 
 # Site settings
 title: Chemical knowledge
-#email: your-email@domain.com
 description: > # a super wonderful website
 baseurl: "/chemical-wiki" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://calibro.github.io" # the base hostname & protocol for your site
 permalink: /:categories/:title
 include: ['_pages']
+analytics: 'xx-xxxxx'
+# Collections
 collections:
   explorations:
     output: true
