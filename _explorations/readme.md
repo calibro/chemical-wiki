@@ -1,9 +1,3 @@
----
-layout: exploration
-category: medical
-published: true
-title: readme.md
----
 ## Add articles
 
 1. Go to [http://prose.io/#calibro/chemical-wiki/tree/master/_explorations](http://prose.io/#calibro/chemical-wiki/tree/master/_explorations)
