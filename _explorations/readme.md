@@ -8,6 +8,10 @@
 6. Click on the save button ![save.png](../media/save.png) and than on commit changes ![commit.png](../media/commit.png)
 7. Refresh the page and click on the publish/unpublish button ![publish.png](../media/publish.png) and commit again
 
+### Math block
+Thanks to [MathJax](https://www.mathjax.org/) and [kramdown](http://kramdown.gettalong.org/) you can easily add math formulas written in LaTeX.
+Follow this [short tutorial](http://kramdown.gettalong.org/syntax.html#math-blocks)
+
 ### Template
 ```html
 {::options auto_ids="false" /}
