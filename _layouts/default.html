@@ -13,7 +13,16 @@
     <script src="{{ "/assets/bootstrap/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/assets/d3/d3.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/chemical-wiki.js" | prepend: site.baseurl }}"></script>
-    {% if jekyll.environment == 'production' or site.github %}}
+    <script src="{{ "/js/charts/smallMultipleArea.js" | prepend: site.baseurl }}"></script>
+    {% if page.data %}
+      <script>
+        var dataFile = '{{ "/media/data/" | append: page.data | prepend: site.baseurl }}';
+      </script>
+    {% endif %}
+    {% if page.custom_js %}
+      <script src="{{ "/js/" | append: page.custom_js | prepend: site.baseurl }}"></script>
+    {% endif %}
+    {% if jekyll.environment == 'production' or site.github %}
       {% include google-analytics.html %}
     {% endif %}
   </body>
