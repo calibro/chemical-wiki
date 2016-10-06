@@ -2,7 +2,7 @@
 
   var chemicalwiki = window.chemicalwiki || (window.chemicalwiki = {});
 
-  chemicalwiki.smallMultipleArea = function(){
+  chemicalwiki.smallMultiplePoint = function(){
 
     var height = 600,
         width = 600,
@@ -10,18 +10,27 @@
         yValue,
         stackColors = ["#0EA789", "#0EA789"],
         brushDate,
+        radius = 1,
         duration = 2000;
 
 
-    function smallMultipleArea(selection){
+    function smallMultiplePoint(selection){
       selection.each(function(data){
 
-        var chart;
+        var chart,
+            canvas;
         var margin = {top: 10, right: 10, bottom: 20, left: 10},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
         if (selection.select('svg').empty()){
+          selection.append('canvas')
+            .attr('width', width)
+            .attr('height', height)
+            .style('position','absolute')
+            .style('top',0)
+            .style('left',0)
+
           chart = selection.append('svg')
           .attr('width', width)
           .attr('height', height)
@@ -40,23 +49,6 @@
         var xMin = d3.min(data, function(layer) { return d3.min(layer.values, function(d) { return d.x; }); }),
             xMax = d3.max(data, function(layer) { return d3.max(layer.values, function(d) { return d.x; }); });
 
-        var intervals = d3.timeMonth.range(xMin, xMax);
-
-        intervals.forEach(function(d){
-          data.forEach(function(f){
-            var elm = f.values.filter(function(e){
-              return e.x.getTime() === d.getTime();
-            });
-
-            if(!elm.length){
-              f.values.push({
-                x: d,
-                y: 0
-              })
-              f.values.sort(function(a,b){return d3.ascending(a.x,b.x)})
-            }
-          })
-        })
         var scale = false;
 
         var x = d3.scaleTime()
@@ -68,17 +60,12 @@
         var y = d3.scaleLinear()
             .range([h, 0]);
 
-        var line = d3.line()
-            .defined(function(d) { return d; })
-            .x(function(d) { return x(d.x); })
-            .y(function(d) { return y(d.y); })
+        var canvas = document.querySelector("canvas"),
+            context = canvas.getContext("2d");
 
-        var area = d3.area()
-            .defined(line.defined())
-            .x(line.x())
-            .y1(line.y())
-            .y0(y(0))
-            .curve(d3.curveStep)
+        context.translate(margin.left, margin.top);
+
+        var format = d3.format(".2s");
 
         var xAxis = d3.axisBottom(x)
           .tickArguments([d3.timeYear.every(1)])
@@ -96,23 +83,26 @@
           .attr("transform", function(d,i) { return "translate(0," + ((h+10)*i) + ")"})
           .each(multiple);
 
-          function multiple(single) {
+          function multiple(single,i) {
 
             var g = d3.select(this);
 
             if (scale) y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) { return d.y; }); })])
             else y.domain([0, d3.max(single.values, function(d) { return d.y; })]);
 
-            g.append("path")
-              .attr("class", "area")
-              //.style("fill", function(d){ return colors()(d[0].group); })
-              .attr("d", area(single.values));
+            context.beginPath();
 
+            single.values.forEach(function(d){
+              context.moveTo(x(d.x) + radius, (y(d.y)+((h+10)*i)));
+              context.arc(x(d.x), (y(d.y)+((h+10)*i)), radius, 0, 2 * Math.PI);
+            })
+
+            context.fill();
             var yAxis = d3.axisLeft(y)
               .ticks(4)
               .tickFormat(function(d){
                 if(d > 0){
-                  return d;
+                  return format(d);
                 }
               })
               .tickSizeOuter(0);
@@ -128,46 +118,52 @@
           }
 
       }); //end selection
-    } // end smallMultipleArea
+    } // end smallMultiplePoint
 
 
-  smallMultipleArea.height = function(x){
+  smallMultiplePoint.height = function(x){
     if (!arguments.length) return height;
     height = x;
-    return smallMultipleArea;
+    return smallMultiplePoint;
   }
 
-  smallMultipleArea.width = function(x){
+  smallMultiplePoint.width = function(x){
     if (!arguments.length) return width;
     width = x;
-    return smallMultipleArea;
+    return smallMultiplePoint;
   }
 
-  smallMultipleArea.xValue = function(x){
+  smallMultiplePoint.xValue = function(x){
     if (!arguments.length) return xValue;
     xValue = x;
-    return smallMultipleArea;
+    return smallMultiplePoint;
   }
 
-  smallMultipleArea.yValue = function(x){
+  smallMultiplePoint.yValue = function(x){
     if (!arguments.length) return yValue;
     yValue = x;
-    return smallMultipleArea;
+    return smallMultiplePoint;
   }
 
-  smallMultipleArea.stackColors = function(x){
+  smallMultiplePoint.stackColors = function(x){
     if (!arguments.length) return stackColors;
     stackColors = x;
-    return smallMultipleArea;
+    return smallMultiplePoint;
   }
 
-  smallMultipleArea.duration = function(x){
+  smallMultiplePoint.radius = function(x){
+    if (!arguments.length) return radius;
+    radius = x;
+    return smallMultiplePoint;
+  }
+
+  smallMultiplePoint.duration = function(x){
     if (!arguments.length) return duration;
     duration = x;
-    return smallMultipleArea;
+    return smallMultiplePoint;
   }
 
-  return smallMultipleArea;
+  return smallMultiplePoint;
 
   }
 

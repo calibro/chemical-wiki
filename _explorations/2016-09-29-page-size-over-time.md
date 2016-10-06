@@ -8,6 +8,8 @@ tools:
 authors:
   - Giorgio Uboldi
   - Gabriele Colombo
+custom_js: size.js
+data: medical_size.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
