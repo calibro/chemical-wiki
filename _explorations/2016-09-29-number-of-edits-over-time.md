@@ -8,6 +8,8 @@ authors:
   - Louis Dijkstra
 tools:
   - Illustrator
+  - Raw
+  - Photoshop
 datasources:
   - Wikipedia
   - '[test link](http://kramdown.gettalong.org)'
