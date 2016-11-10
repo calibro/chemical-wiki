@@ -6,20 +6,20 @@ permalink: /medical/
 published: true
 ---
 
-We wanted to look at a set of psychoactive substances which are rather popular and frequently used, and about which a certain level of knowledge much already exists. Balancing the factors of popularity in use, media and the web and also the level of already created knowledge left us with the following list of substances:
+We wanted to look at a set of Wikipedia articles of psychoactive substances which are rather popular and frequently used, and about which a certain level of knowledge much already exists. Balancing the factors of popularity in use, media and the web and also the level of already created knowledge left us with the following list of substances:
 
-Ayahuasca
+[Ayahuasca](https://en.wikipedia.org/wiki/Ayahuasca)
 
-Cannabis
+[Cannabis](https://en.wikipedia.org/wiki/Cannabis_(drug))
 
-DMT
+[DMT](https://en.wikipedia.org/wiki/N,N-Dimethyltryptamine)
 
-Ketamine
+[Ketamine](https://en.wikipedia.org/wiki/Ketamine)
 
-LSD
+[LSD](https://en.wikipedia.org/wiki/Lysergic_acid_diethylamide)
 
-MDMA
+[MDMA](https://en.wikipedia.org/wiki/MDMA)
 
-Psilocybin
+[Psilocybin](https://en.wikipedia.org/wiki/Psilocybin)
 
-All of these substances are also controversially discussed concerning their risks and benefits and also their potential or factual use in medical treatment. 
+All of these substances are also controversially discussed concerning their risks and benefits and also their potential or factual use in medical treatment.
