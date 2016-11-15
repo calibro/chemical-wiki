@@ -3,7 +3,5 @@ body{
 }
 
 .viz{
-  height: 100vh;
-  transition: height 0.4s;
   position: relative;
 }
