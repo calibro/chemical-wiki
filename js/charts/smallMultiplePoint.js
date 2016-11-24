@@ -8,28 +8,49 @@
         width = 600,
         xValue,
         yValue,
+        scale = 'relative',
+        oldScale,
         stackColors = ["#0EA789", "#0EA789"],
         brushDate,
         radius = 1,
-        duration = 2000;
+        annotations = [],
+        oldVandalism,
+        vandalism = true,
+        duration = 250;
 
 
     function smallMultiplePoint(selection){
       selection.each(function(data){
 
         var chart,
+            context,
             canvas;
+
         var margin = {top: 10, right: 10, bottom: 20, left: 10},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
         if (selection.select('svg').empty()){
+
+
           selection.append('canvas')
-            .attr('width', width)
-            .attr('height', height)
             .style('position','absolute')
             .style('top',0)
             .style('left',0)
+
+          canvas = document.querySelector("canvas");
+          context = canvas.getContext("2d");
+
+          var ratio = getRetinaRatio();
+
+          selection.select('canvas')
+            .attr("width", width*ratio)
+            .attr("height", height*ratio)
+            .style('width', width + 'px')
+            .style('height', height + 'px');
+
+          context.scale(ratio, ratio);
+          context.translate(margin.left, margin.top);
 
           chart = selection.append('svg')
           .attr('width', width)
@@ -39,6 +60,10 @@
         }
         else
         {
+
+          canvas = document.querySelector("canvas");
+          context = canvas.getContext("2d");
+
           chart = selection.select('svg')
           .attr('width', width)
           .attr('height', height)
@@ -46,10 +71,26 @@
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         }
 
-        var xMin = d3.min(data, function(layer) { return d3.min(layer.values, function(d) { return d.x; }); }),
-            xMax = d3.max(data, function(layer) { return d3.max(layer.values, function(d) { return d.x; }); });
 
-        var scale = false;
+        var xMin = d3.min(data, function(layer) { return d3.min(layer.values, function(d) {
+          if(vandalism===false){
+            if(d.vandalism===false){
+              return d.x
+            }
+          }else{
+            return d.x;
+          }
+        }); })
+        var xMax = d3.max(data, function(layer) { return d3.max(layer.values, function(d) {
+          if(vandalism===false){
+            if(d.vandalism===false){
+              return d.x
+            }
+          }else{
+            return d.x;
+          }
+        }); });
+
 
         var x = d3.scaleTime()
             .domain([xMin,xMax])
@@ -60,10 +101,6 @@
         var y = d3.scaleLinear()
             .range([h, 0]);
 
-        var canvas = document.querySelector("canvas"),
-            context = canvas.getContext("2d");
-
-        context.translate(margin.left, margin.top);
 
         var format = d3.format(".2s");
 
@@ -71,33 +108,104 @@
           .tickArguments([d3.timeYear.every(1)])
           .tickSizeOuter(0);
 
-        chart.append("g")
+        var gxAxis = chart.select('g.xAxis');
+        if(!gxAxis.empty()){
+          gxAxis
             .attr("transform", "translate(0," + chartHeight + ")")
             .call(xAxis);
+        }else {
+          chart.append("g")
+              .attr('class', 'xAxis')
+              .attr("transform", "translate(0," + chartHeight + ")")
+              .call(xAxis);
+        }
 
-        chart.selectAll("g.flow")
-          .data(data)
-          .enter().append("g")
+        var flows = chart.selectAll("g.flow")
+          .data(data, function(d){return d.key})
+          // .attr("title", function(d) { return d.key; })
+          // .attr("transform", function(d,i) { return "translate(0," + ((h+10)*i) + ")"})
+          // .each(multiple);
+
+        flows.exit().remove()
+
+        flows.enter().append("g")
+          .merge(flows)
           .attr("class","flow")
           .attr("title", function(d) { return d.key; })
           .attr("transform", function(d,i) { return "translate(0," + ((h+10)*i) + ")"})
           .each(multiple);
 
+          updateCanvas()
+
+          if(annotations.length){
+
+            var xSwoopyScale = d3.scaleLinear()
+                .domain([0, chartWidth])
+                .range([0, chartWidth]);
+
+            var ySwoopyScale = d3.scaleLinear()
+                .domain([chartHeight, 0])
+                .range([chartHeight, 0]);
+
+            var swoopy = d3.swoopyDrag()
+              .x(function(d){return x(d.xVal)})
+              .y(function(d){ return ySwoopyScale(d.yVal) })
+              //.draggable(true)
+              .annotations(annotations)
+
+            var swoopySel = chart.select('g.annotations')
+
+            if(swoopySel.empty()){
+
+              chart.append('marker')
+                .attr('id', 'arrow')
+                .attr('viewBox', '-10 -10 20 20')
+                .attr('markerWidth', 20)
+                .attr('markerHeight', 20)
+                .attr('orient', 'auto')
+              .append('path')
+                .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
+
+              swoopySel = chart.append('g')
+                .attr('class','annotations')
+                .call(swoopy)
+
+              swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+
+            }else {
+              swoopySel.call(swoopy)
+              swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+            }
+
+          }
+
           function multiple(single,i) {
 
             var g = d3.select(this);
 
-            if (scale) y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) { return d.y; }); })])
-            else y.domain([0, d3.max(single.values, function(d) { return d.y; })]);
+            if (scale == 'absolute'){
+              y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) {
+                if(vandalism===false){
+                  if(d.vandalism===false){
+                    return d.y
+                  }
+                }else{
+                  return d.y;
+                }
+              }); })])
+            }else{
+              y.domain([0, d3.max(single.values, function(d) {
+                if(vandalism===false){
+                  if(d.vandalism===false){
+                    return d.y
+                  }
+                }else{
+                  return d.y;
+                }
 
-            context.beginPath();
+              })]);
+            }
 
-            single.values.forEach(function(d){
-              context.moveTo(x(d.x) + radius, (y(d.y)+((h+10)*i)));
-              context.arc(x(d.x), (y(d.y)+((h+10)*i)), radius, 0, 2 * Math.PI);
-            })
-
-            context.fill();
             var yAxis = d3.axisLeft(y)
               .ticks(4)
               .tickFormat(function(d){
@@ -107,15 +215,186 @@
               })
               .tickSizeOuter(0);
 
-            g.append("g")
-              .attr("transform", "translate(" + chartWidth +",0)")
-              .call(yAxis);
+            var gyAxis = g.select('g.yAxis');
 
-            g.append("text")
-              .attr("y", 10)
-              .text(function(d) { return d.key; });
+            if(!gyAxis.empty()){
+              gyAxis
+                .transition()
+                .attr("transform", "translate(" + chartWidth +",0)")
+                .call(yAxis);
+
+              }else{
+              g.append("g")
+                .attr('class','yAxis')
+                .attr("transform", "translate(" + chartWidth +",0)")
+                .call(yAxis);
+            }
+
+            if(g.select('text.name').empty()){
+              g.append("text")
+                .attr('class','name')
+                .attr("y", 10)
+                .text(function(d) { return d.key; });
+            }
 
           }
+
+          function updateCanvas(){
+
+            if(oldScale!=scale && !oldScale){
+              // prepare data
+              data.forEach(function(d,i){
+                y.domain([0, d3.max(d.values, function(d) {
+                  if(vandalism===false){
+                    if(d.vandalism===false){
+                      return d.y
+                    }
+                  }else{
+                    return d.y;
+                  }
+                })]);
+
+                d.values.forEach(function(e){
+                  e.relativeY = y(e.y)+((h+10)*i)
+                })
+
+                y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) {
+                  if(vandalism===false){
+                    if(d.vandalism===false){
+                      return d.y
+                    }
+                  }else{
+                    return d.y;
+                  }
+                }); })])
+
+                d.values.forEach(function(e){
+                  e.absoluteY = y(e.y)+((h+10)*i)
+                })
+
+              })
+
+              //draw first time rect
+              data.forEach(function(d,i){
+                d.values.forEach(function(e){
+                  if(vandalism === false){
+                    if(e.vandalism === false){
+                      context.fillRect(x(e.x)-1, e[scale+'Y']-1, 2, 2);
+                      context.fillStyle = '#000';
+                    }
+                  }else{
+                    context.fillRect(x(e.x)-1, e[scale+'Y']-1, 2, 2);
+                    context.fillStyle = '#000';
+                  }
+                })
+              })
+
+              oldScale = scale;
+
+            }else if((oldScale!=scale && oldScale) || (oldVandalism != vandalism)){
+              oldVandalism = vandalism
+
+              // prepare data
+              data.forEach(function(d,i){
+                y.domain([0, d3.max(d.values, function(d) {
+                  if(vandalism===false){
+                    if(d.vandalism===false){
+                      return d.y
+                    }
+                  }else{
+                    return d.y;
+                  }
+                })]);
+
+                d.values.forEach(function(e){
+                  e.relativeY = y(e.y)+((h+10)*i)
+                })
+
+                y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) {
+                  if(vandalism===false){
+                    if(d.vandalism===false){
+                      return d.y
+                    }
+                  }else{
+                    return d.y;
+                  }
+                }); })])
+
+                d.values.forEach(function(e){
+                  e.absoluteY = y(e.y)+((h+10)*i)
+                })
+
+              })
+
+              var timeScale = d3.scaleLinear()
+                .domain([0, duration])
+                .range([0,1]);
+
+
+              var t = d3.timer(function(elapsed){
+
+                  if(elapsed >= duration){
+                    t.stop()
+                    context.clearRect(0, 0, width, height);
+                    var time = timeScale(duration);
+                    data.forEach(function(d,i){
+                      d.values.forEach(function(e){
+                        if(vandalism === false){
+                          if(e.vandalism === false){
+                            var intepolation = d3.interpolateNumber(e[oldScale+'Y'], e[scale+'Y']);
+                            var value = intepolation(time);
+                            context.fillRect(x(e.x)-1, value-1, 2, 2);
+                          }
+                        }else{
+                          var intepolation = d3.interpolateNumber(e[oldScale+'Y'], e[scale+'Y']);
+                          var value = intepolation(time);
+                          context.fillRect(x(e.x)-1, value-1, 2, 2);
+                        }
+                      })
+                    })
+                    oldScale = scale;
+                  }else{
+                    context.clearRect(0, 0, width, height);
+                    var time = timeScale(elapsed);
+                    data.forEach(function(d,i){
+
+                      d.values.forEach(function(e){
+                        if(vandalism === false){
+                          if(e.vandalism === false){
+                            var intepolation = d3.interpolateNumber(e[oldScale+'Y'], e[scale+'Y']);
+                            var value = intepolation(time);
+                            context.fillRect(x(e.x)-1, value-1, 2, 2);
+                          }
+                        }else{
+                          var intepolation = d3.interpolateNumber(e[oldScale+'Y'], e[scale+'Y']);
+                          var value = intepolation(time);
+                          context.fillRect(x(e.x)-1, value-1, 2, 2);
+                        }
+                      })
+                    })
+                  }
+
+
+                });
+            }else{
+              console.log("non cambia")
+            }
+
+          }
+
+          function getRetinaRatio() {
+                var devicePixelRatio = window.devicePixelRatio || 1
+                var backingStoreRatio = [
+                    context.webkitBackingStorePixelRatio,
+                    context.mozBackingStorePixelRatio,
+                    context.msBackingStorePixelRatio,
+                    context.oBackingStorePixelRatio,
+                    context.backingStorePixelRatio,
+                    1
+                ].reduce(function(a, b) { return a || b })
+
+                return devicePixelRatio / backingStoreRatio
+            }
 
       }); //end selection
     } // end smallMultiplePoint
@@ -160,6 +439,24 @@
   smallMultiplePoint.duration = function(x){
     if (!arguments.length) return duration;
     duration = x;
+    return smallMultiplePoint;
+  }
+
+  smallMultiplePoint.annotations = function(x){
+    if (!arguments.length) return annotations;
+    annotations = x;
+    return smallMultiplePoint;
+  }
+
+  smallMultiplePoint.scale = function(x){
+    if (!arguments.length) return scale;
+    scale = x;
+    return smallMultiplePoint;
+  }
+
+  smallMultiplePoint.vandalism = function(x){
+    if (!arguments.length) return vandalism;
+    vandalism = x;
     return smallMultiplePoint;
   }
 

@@ -8,8 +8,10 @@
         width = 600,
         xValue,
         yValue,
+        scale = 'relative',
         stackColors = ["#0EA789", "#0EA789"],
         brushDate,
+        annotations = [],
         duration = 2000;
 
 
@@ -57,7 +59,6 @@
             }
           })
         })
-        var scale = false;
 
         var x = d3.scaleTime()
             .domain([xMin,xMax])
@@ -84,29 +85,100 @@
           .tickArguments([d3.timeYear.every(1)])
           .tickSizeOuter(0);
 
-        chart.append("g")
+        var gxAxis = chart.select('g.xAxis');
+        if(!gxAxis.empty()){
+          gxAxis
             .attr("transform", "translate(0," + chartHeight + ")")
             .call(xAxis);
+        }else {
+          chart.append("g")
+              .attr('class', 'xAxis')
+              .attr("transform", "translate(0," + chartHeight + ")")
+              .call(xAxis);
+        }
 
-        chart.selectAll("g.flow")
-          .data(data)
-          .enter().append("g")
+
+        var flows = chart.selectAll("g.flow")
+          .data(data, function(d){return d.key})
+          // .attr("title", function(d) { return d.key; })
+          // .attr("transform", function(d,i) { return "translate(0," + ((h+10)*i) + ")"})
+          // .each(multiple);
+
+        flows.exit().remove()
+
+        flows.enter().append("g")
+          .merge(flows)
           .attr("class","flow")
           .attr("title", function(d) { return d.key; })
           .attr("transform", function(d,i) { return "translate(0," + ((h+10)*i) + ")"})
           .each(multiple);
 
+        if(annotations.length){
+
+          var xSwoopyScale = d3.scaleLinear()
+              .domain([0, chartWidth])
+              .range([0, chartWidth]);
+
+          var ySwoopyScale = d3.scaleLinear()
+              .domain([chartHeight, 0])
+              .range([chartHeight, 0]);
+
+          var swoopy = d3.swoopyDrag()
+            .x(function(d){return x(d.xVal)})
+            .y(function(d){ return ySwoopyScale(d.yVal) })
+            //.draggable(true)
+            .annotations(annotations)
+
+          var swoopySel = chart.select('g.annotations')
+
+          if(swoopySel.empty()){
+
+            chart.append('marker')
+              .attr('id', 'arrow')
+              .attr('viewBox', '-10 -10 20 20')
+              .attr('markerWidth', 20)
+              .attr('markerHeight', 20)
+              .attr('orient', 'auto')
+            .append('path')
+              .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
+
+            swoopySel = chart.append('g')
+              .attr('class','annotations')
+              .call(swoopy)
+
+            swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+
+          }else {
+            swoopySel.call(swoopy)
+            swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+          }
+
+        }
+
+
           function multiple(single) {
 
             var g = d3.select(this);
 
-            if (scale) y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) { return d.y; }); })])
-            else y.domain([0, d3.max(single.values, function(d) { return d.y; })]);
+            if (scale == 'absolute'){
+              y.domain([0, d3.max(data, function(layer) { return d3.max(layer.values, function(d) { return d.y; }); })])
+            }else{
+              y.domain([0, d3.max(single.values, function(d) { return d.y; })]);
+            }
 
-            g.append("path")
-              .attr("class", "area")
-              //.style("fill", function(d){ return colors()(d[0].group); })
-              .attr("d", area(single.values));
+            var gArea = g.select('.area');
+
+            if(!gArea.empty()){
+              gArea
+                .transition()
+                .attr("d", area(single.values));
+
+            }else {
+              g.append("path")
+                .attr("class", "area")
+                //.style("fill", function(d){ return colors()(d[0].group); })
+                .attr("d", area(single.values));
+            }
 
             var yAxis = d3.axisLeft(y)
               .ticks(4)
@@ -117,13 +189,27 @@
               })
               .tickSizeOuter(0);
 
-            g.append("g")
-              .attr("transform", "translate(" + chartWidth +",0)")
-              .call(yAxis);
+            var gyAxis = g.select('g.yAxis');
 
-            g.append("text")
-              .attr("y", 10)
-              .text(function(d) { return d.key; });
+            if(!gyAxis.empty()){
+              gyAxis
+                .transition()
+                .attr("transform", "translate(" + chartWidth +",0)")
+                .call(yAxis);
+
+              }else{
+              g.append("g")
+                .attr('class','yAxis')
+                .attr("transform", "translate(" + chartWidth +",0)")
+                .call(yAxis);
+            }
+
+            if(g.select('text.name').empty()){
+              g.append("text")
+                .attr('class','name')
+                .attr("y", 10)
+                .text(function(d) { return d.key; });
+            }
 
           }
 
@@ -161,9 +247,21 @@
     return smallMultipleArea;
   }
 
+  smallMultipleArea.scale = function(x){
+    if (!arguments.length) return scale;
+    scale = x;
+    return smallMultipleArea;
+  }
+
   smallMultipleArea.duration = function(x){
     if (!arguments.length) return duration;
     duration = x;
+    return smallMultipleArea;
+  }
+
+  smallMultipleArea.annotations = function(x){
+    if (!arguments.length) return annotations;
+    annotations = x;
     return smallMultipleArea;
   }
 

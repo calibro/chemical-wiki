@@ -5,3 +5,8 @@ body{
 .viz{
   position: relative;
 }
+
+.annotations path {
+    fill: none;
+    stroke: black;
+}
