@@ -13,6 +13,7 @@ d3.tsv(dataFile, parseTsv,function(data){
                     .yValue('index')
                     .sizeValue('bytes')
                     .colorValue('cat')
+                    .page('MDMA')
 
   viz.datum(data)
     .call(tocMDMA)
@@ -31,6 +32,7 @@ function parseTsv(data){
     index: +data.index,
     titlesNumber: +data.titlesNumber,
     toclevel: +data.toclevel,
+    anchor: data.anchor,
     cat : data['main category']
   }
 }
