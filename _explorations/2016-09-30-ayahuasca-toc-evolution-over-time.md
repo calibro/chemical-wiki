@@ -6,6 +6,8 @@ title: Ayahuasca TOC evolution over time
 authors:
   - Lisa Krieg
   - Matteo Azzi
+custom_js: tocAyahuasca.js
+data: ayahuasca_toc.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
