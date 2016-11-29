@@ -5,6 +5,8 @@ published: true
 title: EMCDDA watchlist and Wikipedia timeline
 authors:
   - Giorgio Uboldi
+custom_js: watchlist.js
+data: watchlist.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}

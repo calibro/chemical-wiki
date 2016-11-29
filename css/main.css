@@ -10,3 +10,8 @@ body{
     fill: none;
     stroke: black;
 }
+
+.legendBottom,
+.legendTop{
+  height: 20px;
+}
