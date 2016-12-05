@@ -1,10 +1,12 @@
 ---
-layout: exploration
+layout: exploration-network
 category: designer
 published: true
 title: Network of co-contribution on designer drug articles
 authors:
   - Louis Dijkstra
+custom_js: cocontribution.js
+data: cocontribution.json
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}

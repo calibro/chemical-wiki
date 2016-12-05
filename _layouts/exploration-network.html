@@ -1,0 +1,99 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{ page.title }}</h1>
+      <!-- Start Network -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-12" id="searchwrapper">
+              <input id="searchsub" class="typeahead" type="text" placeholder="Search article">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="selectedNodes no-opacity">
+              </div>
+            </div>
+          </div>
+          <div class="linkedNodes no-opacity">
+            <div class="networkSide"></div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div id="networkContainer">
+            <div id="controller">
+
+              <div class="btn-group-vertical" id="btn-zoom-wrapper">
+                <button class="btn btn-default" id="zoomIn">
+                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+                <button class="btn btn-default" id="zoomReset">
+                  <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                </button>
+                <button class="btn btn-default" id="zoomOut">
+                  <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Network -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      {{ content }}
+    </div>
+    <div class="col-sm-4">
+      <h6>Category:</h6>
+      <p>
+         {{ page.category }}
+      </p>
+      <h6>Authors:</h6>
+      <p>
+        <ul>
+          {% for author in page.authors %}
+            <li>
+              {{ author }}
+            </li>
+          {% endfor %}
+        </ul>
+      </p>
+      <h6>Tools:</h6>
+      <p>
+        <ul>
+          {% for tool in page.tools %}
+            <li>
+              {{ tool }}
+            </li>
+          {% endfor %}
+        </ul>
+      </p>
+      <h6>Data source(s):</h6>
+      <p>
+        <ul>
+          {% for datasource in page.datasources %}
+            <li>
+              {{ datasource | markdownify }}
+            </li>
+          {% endfor %}
+        </ul>
+      </p>
+      <h6>Data file(s):</h6>
+      <p>
+        <ul>
+          {% for datafile in page.datafiles %}
+            <li>
+              {{ datafile | markdownify }}
+            </li>
+          {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
