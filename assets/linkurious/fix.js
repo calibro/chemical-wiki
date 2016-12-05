@@ -329,7 +329,7 @@ sigma.canvas.nodes.border = function(node, context, settings) {
        alignment = settings('labelAlignment'),
        maxLineLength = settings('maxNodeLabelLineLength') || 0;
 
-   if (size <= settings('labelThreshold'))
+   if (size <= settings('labelThreshold') && !node.selected)
      return;
 
    if (!node.label || typeof node.label !== 'string')

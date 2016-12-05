@@ -1,10 +1,12 @@
 ---
-layout: exploration
+layout: exploration-network
 category: designer
 published: true
 title: Editors network
 authors:
   - Louis Dijkstra
+custom_js: editors.js
+data: editors.json
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
