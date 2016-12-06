@@ -1,5 +1,5 @@
 ---
-layout: exploration
+layout: exploration-network
 category: designer
 published: true
 title: References hosts network
@@ -8,6 +8,8 @@ authors:
   - Louis Dijkstra
 tools:
   - Gephi
+custom_js: references.js
+data: references.json
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
