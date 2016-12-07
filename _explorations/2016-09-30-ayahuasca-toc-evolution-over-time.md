@@ -33,6 +33,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 ### Bias(es) and findings
 
 This analysis shows a relatively neutral representation of the substance Ayahuasca, without emphasis of either risks or benefits. Safety warnings appear only once in 2014, but were removed. A small section on therapeutic uses is introduced in 2016. This development of the Table of Contents mirrors the ongoing research on Ayahuasca, and shows that the knowledge about this substance is not stabilized, as has also been shown in the analyses of the article references.
+
+This method is used in a rather exploratory fashion, as a proxy for the content of the changing article versions. It is based on a qualitative categorization of section headings into one of the four categories, and into sounding either benefit-focused, neutral, or risk-focused. This categorization is rather crude, and only based on the title, not on the content of the section. It is thus prone to contain errors, and has to be taken as showing a trend rather than a precise development.
 </div>
 
 <div class="references">
