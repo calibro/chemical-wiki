@@ -6,6 +6,9 @@ title: 'MDMA references: field mentions overtime'
 authors:
   - Gabriele Colombo
   - Natalia Sanchez-Querubin
+static: mdmafields
+custom_js: mdmahosts.js
+data: mdmaFields.csv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}

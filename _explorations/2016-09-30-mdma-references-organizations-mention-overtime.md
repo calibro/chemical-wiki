@@ -7,7 +7,7 @@ authors:
   - Natalia Sanchez-Querubin
 static: mdmahosts
 custom_js: mdmahosts.js
-data: mdmaHosts.json
+data: mdmaHosts.csv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
