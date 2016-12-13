@@ -1,25 +1,41 @@
 ---
 layout: default
 ---
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>{{ page.title }}</h1>
-      {{ content }}
+{% comment %}
+  {% include header.html %}
+{% endcomment %}
+<div class="pageExHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>{{ page.title }}</h3>
+        <h1>{{ page.rq }}</h1>
+      </div>
     </div>
   </div>
-    {% assign explorations = site.explorations | where: "category", page.id %}
-    {% for exploration in explorations %}
-        {% cycle 'add row' : '<div class="row">', nil, nil %}
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                  <!-- <img src="..." alt="..."> -->
-                  <div class="caption">
-                    <h3>{{ exploration.title }}</h3>
-                    <p><a href="{{ exploration.url | prepend: site.baseurl }}" class="btn btn-default" role="button">explore</a></p>
-                  </div>
-                </div>
-            </div>
-        {% cycle 'end row' : nil, nil, '</div>' %}
-    {% endfor %}
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      {{ content }}
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <h3>Explorations</h3>
+      {% assign explorations = site.explorations | where: "category", page.id %}
+      {% for exploration in explorations %}
+          <div class="media">
+              <div class="media-left">
+                {{ forloop.index | prepend: '0'}}
+              </div>
+              <div class="media-body">
+                <h2 class="media-heading">{{ exploration.title }}</h2>
+              </div>
+              <div class="media-right">
+                <p><a href="{{ exploration.url | prepend: site.baseurl }}" class="btn btn-default" role="button">explore</a></p>
+              </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>

@@ -4,10 +4,11 @@
   {% include head.html %}
 
   <body>
+    {% comment %}
+      {% include header.html %}
+    {% endcomment %}
 
-    {% include header.html %}
-
-      {{ content }}
+    {{ content }}
 
     <script src="{{ "/assets/jquery/jquery.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/assets/bootstrap/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
@@ -33,6 +34,14 @@
     </script>
     {% if page.custom_js %}
       <script src="{{ "/js/" | append: page.custom_js | prepend: site.baseurl }}"></script>
+    {% endif %}
+    {% if page.layout == 'exploration' or page.layout == 'exploration-network' %}
+      <script>
+        $('.intro').appendTo('#intro');
+        $('.protocol').appendTo('#protocol');
+        $('.findings').appendTo('#findings');
+        $('.references').appendTo('#references');
+      </script>
     {% endif %}
     {% if jekyll.environment == 'production' or site.github %}
       {% include google-analytics.html %}

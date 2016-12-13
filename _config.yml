@@ -7,7 +7,7 @@
 
 # Site settings
 title: Chemical knowledge
-description: > # a super wonderful website
+description: Establishing and stabilizing knowledge of psychedelics and designer drugs on Wikipedia
 baseurl: "/chemical-wiki" # the subpath of your site, e.g. /blog
 url: "http://calibro.github.io" # the base hostname & protocol for your site
 permalink: /:categories/:title
