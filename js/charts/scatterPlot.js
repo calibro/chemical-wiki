@@ -156,22 +156,24 @@
           })
           .on('mouseover', function(d){
             circles
+              .raise()
               .filter(function(c){
                 return c.title == d.title
               })
               .transition()
               .attr("stroke", "black")
               .attr('opacity',1)
-              .raise()
+
 
           })
           .on('mouseout', function(d){
 
             circles
+              .sort(function(a, b) { return d3.descending(a[sizeValue], b[sizeValue]) })
               .transition()
               .attr("stroke", "none")
               .attr('opacity',0.5)
-              .sort(function(a, b) { return d3.descending(a[sizeValue], b[sizeValue]) })
+
           })
           .on('click', function(d){
             window.open('https://en.wikipedia.org/w/index.php?title=' + page + '&oldid='+ d.revid + '#' + d.anchor,'_blank')
