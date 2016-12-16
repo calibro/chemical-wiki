@@ -103,23 +103,39 @@
           .rollup(function(leaf){return d3.range(leaf[0].titlesNumber)})
           .entries(data)
 
-        var line = d3.line()
-            .defined(function(d) { return d; })
-            .x(function(d) { return x(new Date(d.key)); })
-            .y(function(d) { return y(d.value.length); })
+        // var line = d3.line()
+        //     .defined(function(d) { return d; })
+        //     .x(function(d) { return x(new Date(d.key)); })
+        //     .y(function(d) { return y(d.value.length); })
+        //
+        // var area = d3.area()
+        //     .defined(line.defined())
+        //     .x(line.x())
+        //     .y1(line.y())
+        //     .y0(y(0))
+        //     .curve(d3.curveStep)
+        //
+        // var bkg = chart.append("path")
+        //   .attr("class", "area")
+        //   .attr("fill", "none")
+        //   .attr("stroke", "#ccc")
+        //   .attr("d", area(dataGrid));
 
-        var area = d3.area()
-            .defined(line.defined())
-            .x(line.x())
-            .y1(line.y())
-            .y0(y(0))
-            .curve(d3.curveStep)
+        var gGrid = chart.selectAll("g.grid")
+          .data(dataGrid)
+          .enter().append("g")
+          .attr("class","grid")
+          .attr("transform", function(d){return "translate(" + x(new Date(d.key)) + ",0)"})
 
-        var bkg = chart.append("path")
-          .attr("class", "area")
-          .attr("fill", "none")
-          .attr("stroke", "#ccc")
-          .attr("d", area(dataGrid));
+        var gGridRect = gGrid.selectAll("rect")
+          .data(function(d){return d.value})
+          .enter()
+          .append('rect')
+          .attr("y", function(d){return y(d+1)})
+          .attr("x", -2)
+          .attr("width", 4)
+          .attr("height", 1)
+          .attr("fill", "black")
 
 
          var circles = chart.selectAll(".cont")
@@ -130,6 +146,7 @@
           .attr("cy", function(d){return y(d[yValue])})
           .attr("r", function (d){ return sizeScale(d[sizeValue]) })
           .attr("fill", function(d){ return color(d[colorValue])})
+          .attr('opacity', 0.5)
           .sort(function(a, b) { return d3.descending(a[sizeValue], b[sizeValue]) })
           .each(function(d){
             $(this).tooltip({
@@ -150,19 +167,6 @@
             window.open('https://en.wikipedia.org/w/index.php?title=' + page + '&oldid='+ d.revid + '#' + d.anchor,'_blank')
           })
 
-
-        // var gGrid = chart.selectAll("g.grid")
-        //   .data(dataGrid)
-        //   .enter().append("g")
-        //   .attr("class","grid")
-        //   .attr("transform", function(d){return "translate(" + x(new Date(d.key)) + ",0)"})
-        //
-        // gGrid.selectAll("circle")
-        //   .data(function(d){return d.value})
-        //   .enter()
-        //   .append('circle')
-        //   .attr("cy", function(d){return y(d+1)})
-        //   .attr("r", 1)
 
         var context = selection.select('svg').append("g")
           .attr("class", "context")
@@ -206,11 +210,14 @@
             circles
               .attr("cx", function(d){return x(d[xValue])})
 
-            bkg
-              .attr("d", area(dataGrid));
+            // bkg
+            //   .attr("d", area(dataGrid));
+
             //
-            // gGrid
-            //   .attr("transform", function(d){return "translate(" + x(new Date(d.key)) + ",0)"})
+            gGrid
+              .attr("transform", function(d){return "translate(" + x(new Date(d.key)) + ",0)"})
+
+            //gGridRect.
 
           }
 
