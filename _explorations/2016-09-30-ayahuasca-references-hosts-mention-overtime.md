@@ -6,6 +6,9 @@ title: 'Ayahuasca references: hosts mention overtime'
 authors:
   - Gabriele Colombo
   - Natalia Sanchez-Querubin
+static: ayahuascafields
+custom_js: mdmahosts.js
+data: ayahuascafields.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
@@ -13,9 +16,6 @@ authors:
 ### Introduction and “How to read”
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum. Quisque luctus ex elit, sed semper elit pharetra vel. Donec luctus orci ante, eget tincidunt purus tempor vitae[^1].Cras imperdiet feugiat varius. Fusce condimentum justo vitae ante pulvinar vulputate et non metus. In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec.
-
-![zoom.png]({{site.baseurl}}/media/zoom.png)
-
 Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
 </div>
 
