@@ -6,29 +6,13 @@ var viz = d3.select('.viz'),
 // viz.style('height',height+'px');
 
 d3.tsv(dataFile, parseTsv,function(data){
-  var groups = d3.nest()
-    .key(function(d){ return d.page})
-    .sortValues(function(a,b){return d3.ascending(a.dateParsed,b.dateParsed)})
-    .entries(data)
-
-  groups = groups.map(function(d){
-    return{
-      key: d.key,
-      values: d.values.map(function(e){return {x:e.dateParsed,y:e.size, vandalism: e.vandalism}}).sort(function(a,b){ return d3.ascending(a.x,b.x) })
-    }
-  })
-
-  var drugsSmallMultiple = chemicalwiki.smallMultiplePoint()
-                    .width(width)
-                    .height(height)
-
-
-  viz.datum(groups)
-    .call(drugsSmallMultiple)
 
   /* buttons */
+  var legendContainer = viz.append('div').attr('class','legend'),
+      vizContainer = viz.append('div').style('position','relative');
+
   var btn = ['relative','absolute']
-  var btnGroup = viz.append('div')
+  var btnGroup = legendContainer.append('div')
     .attr('class', 'btn-group')
     .attr('role', 'group')
 
@@ -57,24 +41,47 @@ d3.tsv(dataFile, parseTsv,function(data){
       })
 
       drugsSmallMultiple.scale(d)
-      viz.datum(groups)
+      vizContainer.datum(groups)
         .call(drugsSmallMultiple)
     })
 
-    var checkDiv = viz.append('div')
+    //var checkDiv = legendContainer.append('div')
 
-    checkDiv.append('input')
+    legendContainer.append('input')
       .attr('type', 'checkbox')
       .property("checked", true)
       .on('change', function(){
         var checked = d3.select(this).property("checked");
 
         drugsSmallMultiple.vandalism(checked)
-        viz.datum(groups)
+        vizContainer.datum(groups)
           .call(drugsSmallMultiple)
       })
 
-    checkDiv.append('span').text(' with vandalism')
+    legendContainer.append('span').text(' with vandalism')
+
+  var mainColor = chemicalwiki.colors().main('medical')
+
+  var groups = d3.nest()
+    .key(function(d){ return d.page})
+    .sortValues(function(a,b){return d3.ascending(a.dateParsed,b.dateParsed)})
+    .entries(data)
+
+  groups = groups.map(function(d){
+    return{
+      key: d.key,
+      values: d.values.map(function(e){return {x:e.dateParsed,y:e.size, vandalism: e.vandalism}}).sort(function(a,b){ return d3.ascending(a.x,b.x) })
+    }
+  })
+
+  var drugsSmallMultiple = chemicalwiki.smallMultiplePoint()
+                    .width(width)
+                    .height(height)
+                    .color(mainColor[0])
+
+
+  vizContainer.datum(groups)
+    .call(drugsSmallMultiple)
 
 });
 

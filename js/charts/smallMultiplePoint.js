@@ -11,6 +11,7 @@
         scale = 'relative',
         oldScale,
         stackColors = ["#0EA789", "#0EA789"],
+        color = 'black',
         brushDate,
         radius = 1,
         annotations = [],
@@ -106,6 +107,7 @@
 
         var xAxis = d3.axisBottom(x)
           .tickArguments([d3.timeYear.every(1)])
+          .tickSize(-chartHeight)
           .tickSizeOuter(0);
 
         var gxAxis = chart.select('g.xAxis');
@@ -118,6 +120,8 @@
               .attr('class', 'xAxis')
               .attr("transform", "translate(0," + chartHeight + ")")
               .call(xAxis);
+
+          chart.select('.xAxis').selectAll('line').attr('stroke','#ccc')
         }
 
         var flows = chart.selectAll("g.flow")
@@ -228,6 +232,8 @@
                 .attr('class','yAxis')
                 .attr("transform", "translate(" + chartWidth +",0)")
                 .call(yAxis);
+
+              g.select('.yAxis').select('path').attr('opacity',0)
             }
 
             if(g.select('text.name').empty()){
@@ -235,6 +241,13 @@
                 .attr('class','name')
                 .attr("y", 10)
                 .text(function(d) { return d.key; });
+
+              g.append('line')
+                .attr('x1', 0)
+                .attr('x2', chartWidth)
+                .attr('y1', h+1)
+                .attr('y2', h+1)
+                .attr('stroke', 'black')
             }
 
           }
@@ -280,11 +293,11 @@
                   if(vandalism === false){
                     if(e.vandalism === false){
                       context.fillRect(x(e.x)-1, e[scale+'Y']-1, 2, 2);
-                      context.fillStyle = '#000';
+                      context.fillStyle = color;
                     }
                   }else{
                     context.fillRect(x(e.x)-1, e[scale+'Y']-1, 2, 2);
-                    context.fillStyle = '#000';
+                    context.fillStyle = color;
                   }
                 })
               })
@@ -427,6 +440,12 @@
   smallMultiplePoint.stackColors = function(x){
     if (!arguments.length) return stackColors;
     stackColors = x;
+    return smallMultiplePoint;
+  }
+
+  smallMultiplePoint.color = function(x){
+    if (!arguments.length) return color;
+    color = x;
     return smallMultiplePoint;
   }
 
