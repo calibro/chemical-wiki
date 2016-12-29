@@ -5,6 +5,8 @@ published: true
 title: Metrics of the designer drugs
 authors:
   - Giorgio Uboldi
+custom_js: designerdrugsMetrics.js
+data: designerdrugs_metrics.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}

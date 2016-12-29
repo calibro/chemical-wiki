@@ -162,3 +162,77 @@ h1, h2, h3, h4, h5, h6{
   overflow-y: scroll;
   margin-left: -8px;
 }
+
+/* designer drugs metrics*/
+
+.header-fixed {
+    width: 100%
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 16.66666667%;
+    float: left;
+    padding-right: 19px;
+    padding-left: 19px;
+}
+.header-fixed > tbody > tr > td{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filtersContainer{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  background-color: white;
+}
+
+.filtersContainer > .row{
+  margin: 0px;
+}
+
+.filtersContainer .bar{
+  fill: #D8D8D8;
+}
+
+.filtersContainer .brush rect{
+  stroke-width: 0px;
+}
+
+.legendContainer input{
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.legendContainer .btn span.glyphicon {
+  opacity: 0;
+}
+.legendContainer .btn.active span.glyphicon {
+  opacity: 1;
+}
