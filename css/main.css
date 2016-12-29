@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6{
 
 .viz{
   position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .annotations path {
@@ -22,6 +23,15 @@ h1, h2, h3, h4, h5, h6{
 .legendBottom,
 .legendTop{
   height: 20px;
+}
+
+/* edits */
+
+.flow .tick line{
+  stroke: #ccc!important;
+}
+.flow .tick text{
+  fill: #898989!important;
 }
 
 /*network*/

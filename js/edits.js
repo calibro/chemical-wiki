@@ -18,36 +18,10 @@ var annotations = [
    }
   ]
 
+
 d3.tsv(dataFile, parseTsv,function(data){
 
-  /* visualization */
-
-  var groups = d3.nest()
-    .key(function(d){ return d.page})
-    .key(function(d){ return d3.timeMonth(d.dateParsed)})
-    .rollup(function(leaf){
-      return {
-        y: leaf.length,
-        x: d3.timeMonth(leaf[0].dateParsed),
-      }
-    })
-    .entries(data)
-
-  groups = groups.map(function(d){
-    return{
-      key: d.key,
-      values: d.values.map(function(e){return e.value}).sort(function(a,b){ return d3.ascending(a.x,b.x) })
-    }
-  })
-
-  drugsSmallMultiple = chemicalwiki.smallMultipleArea()
-                    .width(width)
-                    .height(height)
-                    .annotations(annotations)
-
-  viz.datum(groups)
-    .call(drugsSmallMultiple)
-
+  var mainColor = chemicalwiki.colors().main('medical')
 
   /* buttons */
   var btn = ['relative','absolute']
@@ -83,6 +57,35 @@ d3.tsv(dataFile, parseTsv,function(data){
       viz.datum(groups)
         .call(drugsSmallMultiple)
     })
+    
+  /* visualization */
+
+  var groups = d3.nest()
+    .key(function(d){ return d.page})
+    .key(function(d){ return d3.timeMonth(d.dateParsed)})
+    .rollup(function(leaf){
+      return {
+        y: leaf.length,
+        x: d3.timeMonth(leaf[0].dateParsed),
+      }
+    })
+    .entries(data)
+
+  groups = groups.map(function(d){
+    return{
+      key: d.key,
+      values: d.values.map(function(e){return e.value}).sort(function(a,b){ return d3.ascending(a.x,b.x) })
+    }
+  })
+
+  drugsSmallMultiple = chemicalwiki.smallMultipleArea()
+                    .width(width)
+                    .height(height)
+                    .color(mainColor[0])
+                    .annotations(annotations)
+
+  viz.datum(groups)
+    .call(drugsSmallMultiple)
 
 });
 

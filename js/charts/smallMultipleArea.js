@@ -10,6 +10,7 @@
         yValue,
         scale = 'relative',
         stackColors = ["#0EA789", "#0EA789"],
+        color = 'black',
         brushDate,
         annotations = [],
         duration = 2000;
@@ -83,6 +84,7 @@
 
         var xAxis = d3.axisBottom(x)
           .tickArguments([d3.timeYear.every(1)])
+          .tickSize(-chartHeight)
           .tickSizeOuter(0);
 
         var gxAxis = chart.select('g.xAxis');
@@ -94,7 +96,9 @@
           chart.append("g")
               .attr('class', 'xAxis')
               .attr("transform", "translate(0," + chartHeight + ")")
-              .call(xAxis);
+              .call(xAxis)
+
+          chart.select('.xAxis').selectAll('line').attr('stroke','#ccc')
         }
 
 
@@ -176,7 +180,8 @@
             }else {
               g.append("path")
                 .attr("class", "area")
-                //.style("fill", function(d){ return colors()(d[0].group); })
+                .attr("fill", color )
+                .attr("stroke", 'black' )
                 .attr("d", area(single.values));
             }
 
@@ -202,6 +207,9 @@
                 .attr('class','yAxis')
                 .attr("transform", "translate(" + chartWidth +",0)")
                 .call(yAxis);
+
+              g.select('.yAxis').select('path').attr('opacity',0)
+
             }
 
             if(g.select('text.name').empty()){
@@ -244,6 +252,12 @@
   smallMultipleArea.stackColors = function(x){
     if (!arguments.length) return stackColors;
     stackColors = x;
+    return smallMultipleArea;
+  }
+
+  smallMultipleArea.color = function(x){
+    if (!arguments.length) return color;
+    color = x;
     return smallMultipleArea;
   }
 
