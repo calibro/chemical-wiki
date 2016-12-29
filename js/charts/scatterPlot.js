@@ -10,7 +10,7 @@
         yValue,
         sizeValue,
         colorValue,
-        stackColors = ["#0EA789", "#0EA789"],
+        colors = ["#0EA789", "#0EA789"],
         brushDate,
         radius = 1,
         page,
@@ -22,8 +22,8 @@
 
         var chart;
 
-        var margin = {top: 20, right: 20, bottom: 130, left: 20},
-            margin2 = {top: 610, right: 20, bottom: 20, left: 20},
+        var margin = {top: 20, right: 20, bottom: 130, left: 30},
+            margin2 = {top: 610, right: 20, bottom: 20, left: 30},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom,
             chartHeightContex = height - margin2.top - margin2.bottom ;
@@ -62,7 +62,7 @@
             .range([0, chartWidth]);
 
         var y = d3.scaleLinear()
-            .domain([yMax,1])
+            .domain([yMax+1,1])
             .range([chartHeight, 0]);
 
         var xContext = d3.scaleTime()
@@ -81,7 +81,7 @@
           .extent([[0, -1], [chartWidth, chartHeightContex]])
           .on("brush end", brushed);
 
-        var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.keys(cats))
+        var color = d3.scaleOrdinal(colors).domain(d3.keys(cats))
 
         var format = d3.format(".2s");
 
@@ -97,6 +97,19 @@
             .attr('class','xAxis')
             .attr("transform", "translate(0," + chartHeight + ")")
             .call(xAxis);
+
+        var yAxis = d3.axisLeft(y)
+          //.tickArguments([d3.timeYear.every(1)])
+          //.tickSizeOuter(0);
+
+        var yAxisContext = d3.axisLeft(yContext)
+            //.tickArguments([d3.timeYear.every(1)])
+            .tickSizeOuter(0);
+
+        chart.append("g")
+            .attr('class','yAxis')
+            .attr("transform", "translate(" + -10 + ",0)")
+            .call(yAxis);
 
         var dataGrid = d3.nest()
           .key(function(d){ return d.dateParsed})
@@ -273,9 +286,9 @@
     return scatterPlot;
   }
 
-  scatterPlot.stackColors = function(x){
-    if (!arguments.length) return stackColors;
-    stackColors = x;
+  scatterPlot.colors = function(x){
+    if (!arguments.length) return colors;
+    colors = x;
     return scatterPlot;
   }
 

@@ -6,6 +6,7 @@ viz.style('height',height+'px');
 
 d3.tsv(dataFile, parseTsv,function(data){
 
+  var colors = chemicalwiki.colors().qualitative('medical');
   var tocMDMA = chemicalwiki.scatterPlot()
                     .width(width)
                     .height(height)
@@ -13,6 +14,7 @@ d3.tsv(dataFile, parseTsv,function(data){
                     .yValue('index')
                     .sizeValue('bytes')
                     .colorValue('cat')
+                    .colors(colors)
                     .page('MDMA')
 
   viz.datum(data)
