@@ -5,6 +5,9 @@ published: true
 title: Evolution of title of the article “MDMA”
 authors:
   - Aleksi Hupli
+  - Giorgio Uboldi
+static: mdmatitle
+custom_js: mdmahosts.js
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
