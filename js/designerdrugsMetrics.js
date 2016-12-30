@@ -32,10 +32,11 @@ d3.tsv(dataFile, parseTsv,function(data){
     {header:['first_edit', 'last_edit'], label:'first & last edit'},
   ]
 
-
+  var colors = chemicalwiki.colors().qualitative('designer');
   var colorScale = d3.scaleOrdinal()
      .domain(d3.set(data, function(d){return d.category}).values())
-     .range(["#B8414F","#2F8CBD", "#F67C2D", "#DF8213", "#7E3A08", "#BDC0DF", "#246D9C", "#9ECAED", "#F9BA80", "#8072AC", "#542687"])
+     //.range(["#B8414F","#2F8CBD", "#F67C2D", "#DF8213", "#7E3A08", "#BDC0DF", "#246D9C", "#9ECAED", "#F9BA80", "#8072AC", "#542687"])
+     .range(colors)
 
   var page_sizeScale = d3.scaleLog()
     .domain(d3.extent(data, function(d){return d.page_size}))
