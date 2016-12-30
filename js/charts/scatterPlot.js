@@ -22,8 +22,8 @@
 
         var chart;
 
-        var margin = {top: 20, right: 20, bottom: 130, left: 30},
-            margin2 = {top: 610, right: 20, bottom: 20, left: 30},
+        var margin = {top: 30, right: 20, bottom: 130, left: 50},
+            margin2 = {top: 610, right: 20, bottom: 20, left: 50},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom,
             chartHeightContex = height - margin2.top - margin2.bottom ;
@@ -81,16 +81,39 @@
           .extent([[0, -1], [chartWidth, chartHeightContex]])
           .on("brush end", brushed);
 
-        var color = d3.scaleOrdinal(colors).domain(d3.keys(cats))
+        var color = d3.scaleOrdinal(colors).domain(cats.keys())
 
         var format = d3.format(".2s");
+
+        var legends = chart.append("g")
+            .attr('class','legend')
+            .attr("transform", "translate(0,-20)")
+
+        var legend = legends.selectAll('g')
+          .data(cats.keys())
+          .enter()
+          .append('g')
+          .attr("transform",function(d,i){
+            return "translate(" + i*100+",0)"
+          })
+
+        legend.append('circle')
+          .attr('fill',function(d){return color(d)})
+          .attr('r', 5)
+          .attr('cx', 0)
+          .attr('cy', 0)
+
+        legend.append('text')
+          .text(function(d){return d})
+          .attr('alignment-baseline', 'middle')
+          .attr('x', 10)
 
         var xAxis = d3.axisBottom(x)
           //.tickArguments([d3.timeYear.every(1)])
           .tickSizeOuter(0);
 
         var xAxisContext = d3.axisBottom(xContext)
-            //.tickArguments([d3.timeYear.every(1)])
+            //.tickSize(-chartHeightContex)
             .tickSizeOuter(0);
 
         chart.append("g")
@@ -103,36 +126,36 @@
           //.tickSizeOuter(0);
 
         var yAxisContext = d3.axisLeft(yContext)
-            //.tickArguments([d3.timeYear.every(1)])
+            .ticks(4)
             .tickSizeOuter(0);
 
         chart.append("g")
             .attr('class','yAxis')
             .attr("transform", "translate(" + -10 + ",0)")
-            .call(yAxis);
+            .call(yAxis)
+            .select('path')
+            .attr('opacity', 0)
+
+        chart.select('.yAxis').selectAll('text')
+          .attr('fill','#9B9B9B')
+
+        chart.select('.yAxis').selectAll('line')
+          .attr('stroke','#9B9B9B')
+
+        chart.append("g")
+            .attr('class','yAxisLegend')
+            .attr("transform", "translate(-40," + chartHeight/2 +") rotate(-90)")
+            .append('text')
+            .attr('text-anchor', 'middle')
+            .attr('fill','#9B9B9B')
+            .attr('font-size','12px')
+            .text('TOC POSITION')
+
 
         var dataGrid = d3.nest()
           .key(function(d){ return d.dateParsed})
           .rollup(function(leaf){return d3.range(leaf[0].titlesNumber)})
           .entries(data)
-
-        // var line = d3.line()
-        //     .defined(function(d) { return d; })
-        //     .x(function(d) { return x(new Date(d.key)); })
-        //     .y(function(d) { return y(d.value.length); })
-        //
-        // var area = d3.area()
-        //     .defined(line.defined())
-        //     .x(line.x())
-        //     .y1(line.y())
-        //     .y0(y(0))
-        //     .curve(d3.curveStep)
-        //
-        // var bkg = chart.append("path")
-        //   .attr("class", "area")
-        //   .attr("fill", "none")
-        //   .attr("stroke", "#ccc")
-        //   .attr("d", area(dataGrid));
 
         var gGrid = chart.selectAll("g.grid")
           .data(dataGrid)
@@ -215,34 +238,71 @@
               .attr("transform", "translate(0," + chartHeightContex + ")")
               .call(xAxisContext);
 
+        context.append("g")
+              .attr('class','yAxisContext')
+              .attr("transform", "translate(-10,0)")
+              .call(yAxisContext)
+              .select('path')
+              .attr('opacity', 0)
+
+        context.append("g")
+            .attr('class','yAxisLegend')
+            .attr("transform", "translate(-40," + chartHeightContex/2 +") rotate(-90)")
+            .append('text')
+            .attr('text-anchor', 'middle')
+            .attr('fill','#9B9B9B')
+            .attr('font-size','12px')
+            .text('TOC LENGTH')
+
+        context.select('.yAxisContext').selectAll('text')
+          .attr('fill','#9B9B9B')
+
+        context.select('.yAxisContext').selectAll('line')
+          .attr('stroke','#9B9B9B')
+
+
         context.append("path")
           .attr("class", "area")
-          //.style("fill", function(d){ return colors()(d[0].group); })
+          .attr("fill", "#525A62")
           .attr("d", areaContext(dataGrid));
 
         context.append("g")
           .attr("class", "brush")
           .call(brush)
+
+        var handle = context.select('.brush').selectAll(".handle--custom")
+            .data([{type: "w"}, {type: "e"}])
+            .enter().append("circle")
+              .attr("class", "handle--custom")
+              .attr("fill", "black")
+              .attr("cursor", "ew-resize")
+              .attr('cx', 0)
+              .attr('cy', 0)
+              .attr('r',4)
+
+        context.select('.brush')
           .call(brush.move, x.range());
 
 
         function brushed() {
             if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
-            var s = d3.event.selection || xContext.range();
+            //var s = d3.event.selection || xContext.range();
+            var s = d3.event.selection;
+            if(!s){
+              context.select('.brush')
+                  .call(brush.move, xContext.range())
+              s = xContext.range();
+            }
             x.domain(s.map(xContext.invert, xContext));
             chart.select(".xAxis").call(xAxis);
 
             circles
               .attr("cx", function(d){return x(d[xValue])})
 
-            // bkg
-            //   .attr("d", area(dataGrid));
-
-            //
             gGrid
               .attr("transform", function(d){return "translate(" + x(new Date(d.key)) + ",0)"})
 
-            //gGridRect.
+            handle.attr("display", null).attr("transform", function(d, i) { return "translate(" + s[i] + "," + chartHeightContex / 2 + ")"; });
 
           }
 
