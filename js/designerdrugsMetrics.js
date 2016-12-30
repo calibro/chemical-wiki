@@ -73,7 +73,7 @@ d3.tsv(dataFile, parseTsv,function(data){
         .enter()
         .append('th')
         .html(function(d){
-            return d.label + ' <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>'
+            return d.label + ' <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span>'
         })
         .on('click', function(d){
           if(d.label == 'first & last edit'){
@@ -90,6 +90,15 @@ d3.tsv(dataFile, parseTsv,function(data){
               })
 
           }
+
+
+          headers.selectAll('span')
+            .attr('class', 'glyphicon glyphicon-sort pull-right')
+
+          d3.select(this).select('span')
+            .attr('class', function(){
+              return d.sort?'glyphicon glyphicon-sort-by-attributes pull-right':'glyphicon glyphicon-sort-by-attributes-alt pull-right';
+            })
 
           d.sort = !d.sort;
         })
@@ -277,6 +286,13 @@ d3.tsv(dataFile, parseTsv,function(data){
         check.property("checked", true).on('change')()
 
         labelCont.classed('active', true)
+
+        headers.selectAll('span')
+          .attr('class', 'glyphicon glyphicon-sort pull-right')
+
+        lines.sort(function(a,b){
+          return d3.ascending(a.category, b.category) || d3.ascending(a.substance, b.substance);
+        })
 
       })
 
