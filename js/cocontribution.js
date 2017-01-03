@@ -15,6 +15,7 @@ sigma.parsers.json(dataFile, {
       zoomMax: 1,
       labelThreshold: 6,
       labelSize: 'fixed',
+      font: 'Source Sans Pro',
       labelSizeRatio: 1.5,
       maxEdgeSize:3,
       labelAlignment: 'top',
@@ -39,8 +40,13 @@ sigma.parsers.json(dataFile, {
         drag = false;
     });
 
+    var colors = chemicalwiki.colors().diverging('designer').reverse();
+    var extent = d3.extent(sigInst.graph.nodes(), function(d){ return +d.attributes.rank_based_on_eb_estimate})
+    var colorScale = d3.scaleQuantize().range(colors).domain(extent)
+
     sigInst.graph.nodes().forEach(function(e){
       e.type = 'border';
+      e.color = colorScale(+e.attributes.rank_based_on_eb_estimate)
     });
 
     sigInst.graph.edges().forEach(function(e){
@@ -150,12 +156,13 @@ sigma.parsers.json(dataFile, {
           //   return shadesDict[subDict[d.label.toLowerCase()]]
           // }
         })
-        .text(function(d){
+        .html(function(d){
           var linkvalue = edges.filter(function(e){
             return d.id == e.source || d.id == e.target
           })[0].size;
-          return d.label + ' [' + linkvalue + ']'
-        }).on('click', function(d){
+          return d.label + ' <span class="badge">' + linkvalue + '</span>'
+        })
+        .on('click', function(d){
           var elm = sigInst.graph.nodes().filter(function(e){return e.id == d.id})[0]
           selectNode(elm)
         })
@@ -214,12 +221,13 @@ sigma.parsers.json(dataFile, {
             //   return shadesDict[subDict[d.label.toLowerCase()]]
             // }
           })
-          .text(function(d){
+          .html(function(d){
             var linkvalue = edges.filter(function(e){
               return d.id == e.source || d.id == e.target
             })[0].size;
-            return d.label + ' [' + linkvalue + ']'
-          }).on('click', function(d){
+            return d.label + ' <span class="badge">' + linkvalue + '</span>'
+          })
+          .on('click', function(d){
             selectNode(d)
           })
 
