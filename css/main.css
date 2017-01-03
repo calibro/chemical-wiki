@@ -99,6 +99,14 @@ ul {
 
 /*network*/
 
+.nwRow{
+  border: 1px solid #f8f8f8;
+}
+
+.nwCol{
+  background-color: #f8f8f8;
+}
+
 #networkContainer{
     width: 100%;
     position: relative;
@@ -154,8 +162,42 @@ ul {
 
 #controller .btn-default:hover{
   border: 1px solid #F6F6F6;
-  background-color: #FFF4F4;
+  background-color: #f8f8f8;
   transition: background-color 0.3s ease;
+}
+
+.selectedNodes h4,
+.linkedNodes h4 {
+  font-size: 12px;
+    color: #005AC4;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.selectedNodes p{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+}
+
+.linkButton{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.linkButton.badge{
+  margin-right: 3px;
+  margin-bottom: 3px;
+  padding: 5px 9px;
+  font-weight: normal;
+  background-color: '#4A4A4A';
+  cursor: pointer;
+}
+.linkButton.badge .badge{
+  background-color: white;
+  color: black;
+  margin-left: 4px;
 }
 
 /* typeahead */
@@ -186,7 +228,7 @@ ul {
 }
 
 .typeahead:focus {
-  border: 1px solid #FFF4F4;
+  border: 1px solid #F8F8F8;
 }
 
 .tt-query {
@@ -217,12 +259,12 @@ ul {
 .tt-suggestion:hover {
   cursor: pointer;
   color: #000;
-  background-color: #FFF4F4;
+  background-color: #F8F8F8;
 }
 
 .tt-suggestion.tt-cursor {
   color: #000;
-  background-color: #FFF4F4;
+  background-color: #F8F8F8;
 
 }
 
@@ -233,7 +275,6 @@ ul {
 .networkSide{
   height: 300px;
   overflow-y: scroll;
-  margin-left: -8px;
 }
 
 /* designer drugs metrics*/

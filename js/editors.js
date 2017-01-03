@@ -18,6 +18,7 @@ sigma.parsers.json(dataFile, {
       labelSizeRatio: 1,
       maxEdgeSize:3,
       labelAlignment: 'top',
+      font: 'Source Sans Pro',
       borderColor: '#fff',
       borderSize:1,
       doubleClickEnabled: false,
@@ -39,9 +40,18 @@ sigma.parsers.json(dataFile, {
         drag = false;
     });
 
+    var colors = chemicalwiki.colors().qualitative('designer');
+    colors.unshift('#84304b');
+    colors.unshift('#000');
+    var keys = d3.set(sigInst.graph.nodes(),function(d){return d.attributes.SubstanceCat}).values()
+    var colorScale = d3.scaleOrdinal().domain(keys).range(colors)
+
     sigInst.graph.nodes().forEach(function(e){
       e.type = 'border';
+      e.color = colorScale(e.attributes.SubstanceCat)
     });
+
+
 
     sigInst.graph.edges().forEach(function(e){
       e.color = 'rgba(130,130,130,0.2)';
@@ -150,12 +160,13 @@ sigma.parsers.json(dataFile, {
           //   return shadesDict[subDict[d.label.toLowerCase()]]
           // }
         })
-        .text(function(d){
+        .html(function(d){
           var linkvalue = edges.filter(function(e){
             return d.id == e.source || d.id == e.target
           })[0].size;
-          return d.label + ' [' + linkvalue + ']'
-        }).on('click', function(d){
+          return d.label + ' <span class="badge">' + linkvalue + '</span>'
+        })
+        .on('click', function(d){
           var elm = sigInst.graph.nodes().filter(function(e){return e.id == d.id})[0]
           selectNode(elm)
         })
@@ -214,12 +225,13 @@ sigma.parsers.json(dataFile, {
             //   return shadesDict[subDict[d.label.toLowerCase()]]
             // }
           })
-          .text(function(d){
+          .html(function(d){
             var linkvalue = edges.filter(function(e){
               return d.id == e.source || d.id == e.target
             })[0].size;
-            return d.label + ' [' + linkvalue + ']'
-          }).on('click', function(d){
+            return d.label + ' <span class="badge">' + linkvalue + '</span>'
+          })
+          .on('click', function(d){
             selectNode(d)
           })
 
