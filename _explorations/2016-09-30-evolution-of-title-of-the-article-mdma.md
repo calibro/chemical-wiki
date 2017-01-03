@@ -14,9 +14,8 @@ custom_js: mdmahosts.js
 <div class="intro">
 ### Introduction and “How to read”
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum. Quisque luctus ex elit, sed semper elit pharetra vel. Donec luctus orci ante, eget tincidunt purus tempor vitae[^1].Cras imperdiet feugiat varius. Fusce condimentum justo vitae ante pulvinar vulputate et non metus. In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec.
+In this section, we wanted to have a closer look at the MDMA Wikipedia article and how it developed over time. This exploration has been conducted qualitatively and gives insights into the interactions and dynamics among the editor community.
 
-Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
 </div>
 
 <div class="protocol">
@@ -32,11 +31,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 <div class="findings">
 ### Bias(es) and findings
 
-In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec. Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
+The first thing that becomes visible is that the name of the Wikipedia website changed several times, reflecting the ongoing misunderstandings that revolve around its name and its street names. In the beginning the article ‘MDMA’ was directing to one with the title “Ecstasy” which transformed into “Ecstasy (drug)” in 2005, being more precise in relation to other forms of ecstasy. However in 2006, the website was renamed into “methylenedioxymethamphetamine”, with authors demanding “the proper chemical name”. The next step in the evolution happened in 2009 where the chemical name was extended to “3,4-Methylenedioxymethamphetamine”, shortly later being changed back to the very original term “MDMA”. That decision is based on the guideline that the common name of a substance should be used on Wikipedia which makes it also easier to find in search engines.
+The lively discussions on Wikipedia about the terminology reflects the difficulties of for instance journalists, to distinct MDMA in its different forms as crystals (“Molly”, “Mandy”, “MDMA”) or pills (“XTC”, “X”, etc.). They also show the tensions inherent in the editor community, and the competition of values among the editors: scientific accuracy on the one hand would support the correct chemical name, but usability supports the more common term of MDMA or Ecstasy. Such discussions are circular, as they are never settled for good on a dynamic platform.
+
 </div>
 
 <div class="references">
 ### References
-
-[^1]: And here is the definition.
 </div>

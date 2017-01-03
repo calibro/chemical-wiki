@@ -13,9 +13,8 @@ data: watchlist.tsv
 <div class="intro">
 ### Introduction and “How to read”
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum. Quisque luctus ex elit, sed semper elit pharetra vel. Donec luctus orci ante, eget tincidunt purus tempor vitae[^1].Cras imperdiet feugiat varius. Fusce condimentum justo vitae ante pulvinar vulputate et non metus. In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec.
+How up to date is the knowledge about designer drugs on Wikipedia? In order to explore whether Wikipedia is a cutting edge source for designer drugs information, or whether it mainly features well known substances, we compared the appearance of various designer drugs on Wikipedia and with the date they were added to the EMCDDA watch lists. The EMCDDA, or European Monitoring Centre for Drugs and Drug Addiction, is an organization that monitors drugs and drug use in Europe. Designer Drugs are one of the phenomena that the EMDDA focuses on and their appearance and monitoring is one of the key tasks (EMCDDA 2016). In this interactive graph, you can see above an X-axis with a timeline on which different designer drugs appear in time, shown on the Y-axis. The Eye symbol represents the point in time when the drug came on the EMCDDA watch list, the globe symbol when it appeared on Wikipedia. The distance between the symbols represents the time that has passed in between.
 
-Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
 </div>
 
 <div class="protocol">
@@ -31,11 +30,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 <div class="findings">
 ### Bias(es) and findings
 
-In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec. Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
+The most significant finding is that Wikipedia played an important role for the knowledge about these new substances until approximately 2012, with the EMCDDA reacting often years later. Being an internet and technology born phenomenon to a large extend[^1] [^2], hundreds of designer drugs were represented on Wikipedia before the EMCDDA and the European countries have discovered them. However in recent years that relationship changed and today, many substances appear on the watch lists before there is an article on Wikipedia about them. This can be explained in several ways: either the EMCDDA started monitoring Wikipedia and also extended its online research to user-driven websites where these substances are discussed, sold and experimented with early on[^1], or Wikipedia transformed into a source for rather stabilized knowledge, with cutting edge knowledge about designer drugs being found elsewhere, e.g. in fora and blogs.
+
 </div>
 
 <div class="references">
 ### References
 
-[^1]: And here is the definition.
+[^1]: Berning, M., & Hardon, A. (2016). Educated Guesses and Other Ways to Address the Pharmacological Uncertainty of Designer Drugs: An Exploratory Study of Experimentation Through an Online Drug Forum. Contemporary Drug Problems, 43(3), 277–292. http://doi.org/10.1177/0091450916662164
+
+[^2]: Móró, Levente. "Harm reduction of novel psychoactive substance use." Change and Continuity: researching evolving drug landscapes in Europe. Lengerich: Pabst Science Publishers (2014): 36-50.
 </div>
