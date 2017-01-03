@@ -2,9 +2,24 @@ var viz = d3.select('.viz'),
     width = viz.node().getBoundingClientRect().width,
     height = 400;
 
-var legendTop = viz.append('div')
-  .attr("class", "legendTop")
-  .append('svg')
+
+var controllers = viz.append('div')
+  .attr('class', 'row')
+
+var colorsContainer =  controllers
+  .append('div')
+  .attr('class', 'col-md-6')
+
+var buttonContainer = controllers
+  .append('div')
+  .attr('class', 'col-md-6')
+  .append('div')
+  .attr("class", "buttonContainer pull-right")
+  .text('Sort substance by: ')
+
+// var legendTop = viz.append('div')
+//   .attr("class", "legendTop")
+//   .append('svg')
 
 var vizContainer = viz.append('div')
   .attr('class','vizContainer')
@@ -14,9 +29,6 @@ var vizContainer = viz.append('div')
 var legendBottom = viz.append('div')
   .attr("class", "legendBottom")
   .append('svg')
-
-var buttonContainer = viz.append('div')
-  .attr("class", "buttonContainer")
 
 
     /* annotations */
@@ -36,8 +48,10 @@ var annotations = [
 
 d3.tsv(dataFile, parseTsv,function(data){
 
+  var colors = chemicalwiki.colors().diverging('designer');
+  colors = [colors[1], colors[colors.length-1]]
   /* visualization */
-  var vizHeight = data.length * 20;
+  var vizHeight = data.length * 30;
   drugsDotPlot = chemicalwiki.dotPlot()
                     .width(width)
                     .height(vizHeight)
@@ -45,6 +59,7 @@ d3.tsv(dataFile, parseTsv,function(data){
                     .xValues(['wikipedia_date', 'watchlist_date'])
                     .sortedBy('wikipedia_date')
                     .colorValue('category')
+                    .colors(colors)
 
   vizContainer.datum(data)
     .call(drugsDotPlot)
@@ -57,13 +72,13 @@ d3.tsv(dataFile, parseTsv,function(data){
   var xAxisTop = d3.axisTop(x)
     .tickSizeOuter(0);
 
-  legendTop
-      .attr("width", drugsDotPlot.width())
-      .attr("height", 20)
-      .append("g")
-      .attr("transform", "translate(" +  drugsDotPlot.margin().left +",19)")
-      .attr('class','xAxis')
-      .call(xAxisTop);
+  // legendTop
+  //     .attr("width", drugsDotPlot.width())
+  //     .attr("height", 20)
+  //     .append("g")
+  //     .attr("transform", "translate(" +  drugsDotPlot.margin().left +",19)")
+  //     .attr('class','xAxis')
+  //     .call(xAxisTop);
 
   legendBottom
       .attr("width", drugsDotPlot.width())

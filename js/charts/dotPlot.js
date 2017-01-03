@@ -12,7 +12,7 @@
         margin = {top: 0, right: 20, bottom: 0, left: 20},
         sizeValue,
         colorValue,
-        stackColors = ["#0EA789", "#0EA789"],
+        colors = ["#0EA789", "#0EA789"],
         sortedBy,
         duration = 2000;
 
@@ -50,12 +50,12 @@
 
           gradient.append("stop")
               .attr("offset", "0%")
-              .attr("stop-color", "blue")
+              .attr("stop-color", colors[1])
               .attr("stop-opacity", 1);
 
           gradient.append("stop")
               .attr("offset", "100%")
-              .attr("stop-color", "red")
+              .attr("stop-color", colors[0])
               .attr("stop-opacity", 1);
 
           var gradient2 = defs
@@ -64,12 +64,12 @@
 
           gradient2.append("stop")
               .attr("offset", "0%")
-              .attr("stop-color", "red")
+              .attr("stop-color", colors[0])
               .attr("stop-opacity", 1);
 
           gradient2.append("stop")
               .attr("offset", "100%")
-              .attr("stop-color", "blue")
+              .attr("stop-color", colors[1])
               .attr("stop-opacity", 1);
         }
         else
@@ -98,29 +98,46 @@
             .domain(yDomain)
             .range([0, chartHeight]);
 
-        var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.keys(cats))
+        var color = d3.scaleOrdinal(colors).domain(cats.keys())
 
-        var yAxis = d3.axisLeft(y)
-          .tickSizeOuter(0);
+        var yAxis = d3.axisRight(y)
+          .tickSizeOuter(0)
+          .tickSize(0)
+
+        var drugPijamaGroup = chart
+          .selectAll(".gPijamaDrug")
+          .data(data, function(d){return d[yValue]})
+
+        drugPijamaGroup.enter().append('rect')
+              .attr("class", 'gPijamaDrug')
+              .attr("transform", function(d){
+                return 'translate(0,' + y(d[yValue])+ ')';
+              })
+              .attr('x' ,-margin.left)
+              .attr('height' ,y.bandwidth())
+              .attr('width', chartWidth + margin.left)
+              .attr('fill', function(d,i){
+                return i % 2 == 0?'#f6f6f6':'white';
+              })
 
         if(chart.select('.yAxis').empty()){
-          // chart.append("g")
-          //     .attr('class','xAxis')
-          //     .attr("transform", "translate(0," + chartHeight + ")")
-          //     .call(xAxisBottom);
-          //
-          // chart.append("g")
-          //     .attr('class','xAxis')
-          //     .call(xAxisTop);
 
           chart.append("g")
+              .attr("transform", "translate("+ -margin.left +",0)")
               .attr('class','yAxis')
-              .call(yAxis);
+              .call(yAxis)
+              .select('path')
+              .attr('opacity',0)
+
+          chart.select(".yAxis").selectAll('text').attr('font-size', '13px')
+
+
           }else{
             chart.select(".yAxis")
                 .transition()
                 .call(yAxis);
           }
+
 
         var drugGroup = chart
           .selectAll(".gDrug")
@@ -130,7 +147,7 @@
             .attr("class", 'gDrug')
             .attr("transform", function(d){
               return 'translate(0,' + y(d[yValue])+ ')';
-            }).each(function(d){
+            }).each(function(d,i){
 
               var g = d3.select(this);
 
@@ -138,13 +155,13 @@
                 .attr("cx",x(d[xValues[0]]))
                 .attr("cy",y.bandwidth()/2)
                 .attr("r", 2)
-                .attr("fill", "blue")
+                .attr("fill", colors[1])
 
               g.append('circle')
                 .attr("cx",x(d[xValues[1]]))
                 .attr("cy",y.bandwidth()/2)
                 .attr("r", 2)
-                .attr("fill", "red")
+                .attr("fill", colors[0])
 
               g.append('rect')
                 .attr("x",function(){
@@ -206,9 +223,9 @@
     return dotPlot;
   }
 
-  dotPlot.stackColors = function(x){
-    if (!arguments.length) return stackColors;
-    stackColors = x;
+  dotPlot.colors = function(x){
+    if (!arguments.length) return colors;
+    colors = x;
     return dotPlot;
   }
 
