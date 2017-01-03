@@ -44,6 +44,42 @@ sigma.parsers.json(dataFile, {
     var extent = d3.extent(sigInst.graph.nodes(), function(d){ return +d.attributes.rank_based_on_eb_estimate})
     var colorScale = d3.scaleQuantize().range(colors).domain(extent)
 
+    var colorLegend = d3.select('.nwLegend')
+
+    colorLegend.append('span')
+          .style('display', 'inline-block')
+          .style('margin-right','10px')
+          .text('More possibilities of contribution ')
+
+
+    colorLegend.selectAll('.spanStep')
+      .data(d3.range(colors.length))
+      .enter()
+      .append('span')
+      .style('class', 'spanStep')
+      .style('width', '10px')
+      .style('height', '10px')
+      .style('display', 'inline-block')
+      .style('background', function(d){
+        return colors[d];
+      })
+
+      colorLegend.append('span')
+            .style('display', 'inline-block')
+              .style('margin-left','10px')
+            .text('Less possibilities of contribution ')
+
+    // colorLegend.append('span')
+    //   .text(function(d){
+    //     if(d == 'host'){
+    //       return 'Hosts'
+    //     }else{
+    //       return d
+    //     }
+    //
+    //   })
+    //   .style('margin-right','15px')
+
     sigInst.graph.nodes().forEach(function(e){
       e.type = 'border';
       e.color = colorScale(+e.attributes.rank_based_on_eb_estimate)

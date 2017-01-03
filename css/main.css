@@ -118,6 +118,12 @@ ul {
   border: 1px solid #f8f8f8;
 }
 
+.nwLegend{
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 15px;
+}
+
+
 .nwCol{
   background-color: #f8f8f8;
 }

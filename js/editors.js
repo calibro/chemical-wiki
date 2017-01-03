@@ -46,6 +46,33 @@ sigma.parsers.json(dataFile, {
     var keys = d3.set(sigInst.graph.nodes(),function(d){return d.attributes.SubstanceCat}).values()
     var colorScale = d3.scaleOrdinal().domain(keys).range(colors)
 
+    var colorLegend = d3.select('.nwLegend').selectAll('span')
+      .data(keys)
+      .enter()
+      .append('span')
+      .style('display', 'inline-block')
+
+    colorLegend.append('span')
+      .style('width', '10px')
+      .style('height', '10px')
+      .style('border-radius','50%')
+      .style('display', 'inline-block')
+      .style('margin-right','5px')
+      .style('background', function(d){
+        return colorScale(d);
+      })
+
+    colorLegend.append('span')
+      .text(function(d){
+        if(d == '#N/A'){
+          return 'Users'
+        }else{
+          return d
+        }
+
+      })
+      .style('margin-right','15px')
+
     sigInst.graph.nodes().forEach(function(e){
       e.type = 'border';
       e.color = colorScale(e.attributes.SubstanceCat)
@@ -53,8 +80,6 @@ sigma.parsers.json(dataFile, {
       //   e.label = 'Editor'
       // }
     });
-
-
 
     sigInst.graph.edges().forEach(function(e){
       e.color = 'rgba(130,130,130,0.2)';
