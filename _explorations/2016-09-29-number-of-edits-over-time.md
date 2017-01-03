@@ -41,7 +41,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 ### Bias(es) and findings
 
 There are several interesting observations that be made on this map. Comparing the pages of Cannabis and Cannabis (drug), it can be seen that the latter is a result of splitting the former page. Since the inception of the second page, both pages are contributed to in similar numbers.
-Generally speaking, both pages about Cannabis, and the articles about LSD, MDMA, and Psylocibin Mushroom have most of their contributions between 2004 and 2010. After this, much less edits appear. This coincides with the general development of Wikipedia, where the number of newly created articles peaked in 2007 (https://en.wikipedia.org/wiki/Wikipedia:Modelling_Wikipedia's_growth).
+Generally speaking, both pages about Cannabis, and the articles about LSD, MDMA, and Psylocibin Mushroom have most of their contributions between 2004 and 2010. After this, much less edits appear. This coincides with the general development of Wikipedia, where the number of newly created articles peaked in 2007[^1].
 A few articles are notable exceptions: The Ayahuasca article shows a rather stable number of edits until today, as does the article about DMT. Ketamine goes in the same direction, albeit a bit less stable, and Psylocibin has relatively low stable numbers of edits, apart from a peak in 2012. More qualitative in depth research is necessary to explain these differences. The articles about Ayahuasca and MDMA will be analyzed in more depth on this site, and some of their major differences will be explained.
 
 The bias of this map lies in the distant view it provides. It only shows the changes of the number of edits, and not what caused them. It also does not show how significant a change was. Adding a whole new section of content regarding a substance thus counts as the same one edit as correcting a typo, or adding an obligatory info box.
@@ -50,6 +50,5 @@ The bias of this map lies in the distant view it provides. It only shows the cha
 <div class="references">
 ### References
 
-[^1]: And here is the definition.
-https://en.wikipedia.org/wiki/Wikipedia:Modelling_Wikipedia's_growth
+[^1]: https://en.wikipedia.org/wiki/Wikipedia:Modelling_Wikipedia's_growth
 </div>

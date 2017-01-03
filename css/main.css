@@ -9,11 +9,62 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+h1{
+font-size: 42px;
+color: #000000;
+font-weight: 300;
+}
+
+h2{
+  font-size: 42px;
+  font-weight: 900;
+  opacity: 0.2;
+  font-size: 42px;
+  color: #000000;
+}
+
+h3{
+font-size: 12px;
+color: #005AC4;
+letter-spacing: 1px;
+font-weight: 600;
+text-transform: uppercase;
+margin-top: 70px;
+}
+
+p{
+font-size: 24px;
+color: #000000;
+}
+
+li{
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 14px;
+color: #000000;
+letter-spacing: 0;
+}
+
+ul {
+  list-style: none;
+  -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+/*Viz page layout*/
+.viz-header{
+  margin-top: 100px;
+}
 
 .viz{
   position: relative;
   font-family: 'Source Sans Pro', sans-serif;
+  margin: 75px 0 25px;
 }
+
+/*End viz page layout*/
 
 .annotations path {
     fill: none;
