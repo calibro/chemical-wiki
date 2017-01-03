@@ -39,7 +39,7 @@ color: #000000;
 
 li{
 font-family: 'Source Sans Pro', sans-serif;
-font-size: 14px;
+font-size: 14px!important;
 color: #000000;
 letter-spacing: 0;
 }
@@ -47,10 +47,25 @@ letter-spacing: 0;
 ul {
   list-style: none;
   -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+.footnotes ol {
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+.footnotes a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px!important;
+  color: #000000;
+  letter-spacing: 0;
 }
 
 /*Viz page layout*/
