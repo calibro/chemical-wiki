@@ -66,7 +66,7 @@ layout: default
         <ul>
           {% for datasource in page.datasources %}
             <li>
-              {{ datasource | markdownify }}
+              {{ datasource | markdownify | remove: '<p>' | remove: '</p>' }}
             </li>
           {% endfor %}
         </ul>
@@ -76,7 +76,7 @@ layout: default
         <ul>
           {% for datafile in page.datafiles %}
             <li>
-              {{ datafile | markdownify }}
+              {{ datafile | markdownify | remove: '<p>' | remove: '</p>' }}
             </li>
           {% endfor %}
         </ul>
