@@ -9,7 +9,7 @@
         xValues,
         yValue,
         x,
-        margin = {top: 0, right: 20, bottom: 0, left: 20},
+        margin = {top: 0, right: 5, bottom: 0, left: 20},
         sizeValue,
         colorValue,
         colors = ["#0EA789", "#0EA789"],
@@ -151,17 +151,27 @@
 
               var g = d3.select(this);
 
-              g.append('circle')
+              var wiki = g.append('circle')
                 .attr("cx",x(d[xValues[0]]))
                 .attr("cy",y.bandwidth()/2)
-                .attr("r", 2)
+                .attr("r", 4)
                 .attr("fill", colors[1])
 
-              g.append('circle')
+              $(wiki.node()).tooltip({
+                'container': 'body',
+                'title': d3.timeFormat("%B %d, %Y")(wiki.data()[0][xValues[0]])
+              })
+
+              var watchlist = g.append('circle')
                 .attr("cx",x(d[xValues[1]]))
                 .attr("cy",y.bandwidth()/2)
-                .attr("r", 2)
+                .attr("r", 4)
                 .attr("fill", colors[0])
+
+              $(watchlist.node()).tooltip({
+                'container': 'body',
+                'title': d3.timeFormat("%B %d, %Y")(wiki.data()[0][xValues[1]])
+              })
 
               g.append('rect')
                 .attr("x",function(){

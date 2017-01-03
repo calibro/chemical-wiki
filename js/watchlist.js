@@ -5,6 +5,7 @@ var viz = d3.select('.viz'),
 
 var controllers = viz.append('div')
   .attr('class', 'row')
+  .style('margin-bottom', '15px')
 
 var colorsContainer =  controllers
   .append('div')
@@ -50,6 +51,27 @@ d3.tsv(dataFile, parseTsv,function(data){
 
   var colors = chemicalwiki.colors().diverging('designer');
   colors = [colors[1], colors[colors.length-1]]
+
+  var colorLegend = colorsContainer.selectAll('span')
+    .data([
+      {color: colors[1], label: 'Added on Wikipedia'},
+      {color: colors[0], label: 'Added on EMCDDA watchlist'}
+    ])
+    .enter()
+    .append('span')
+
+  colorLegend.append('span')
+    .style('width', '10px')
+    .style('height', '10px')
+    .style('border-radius','50%')
+    .style('display', 'inline-block')
+    .style('margin-right','5px')
+    .style('background', function(d){
+      return d.color;
+    })
+
+  colorLegend.append('span').text(function(d){return d.label}).style('margin-right','15px')
+
   /* visualization */
   var vizHeight = data.length * 30;
   drugsDotPlot = chemicalwiki.dotPlot()
@@ -67,7 +89,9 @@ d3.tsv(dataFile, parseTsv,function(data){
   var x = drugsDotPlot.xAxis();
 
   var xAxisBottom = d3.axisBottom(x)
-    .tickSizeOuter(0);
+    .tickSizeOuter(0)
+    .tickPadding(6)
+    .tickSize(0);
 
   var xAxisTop = d3.axisTop(x)
     .tickSizeOuter(0);
@@ -86,7 +110,9 @@ d3.tsv(dataFile, parseTsv,function(data){
       .append("g")
       .attr("transform", "translate(" +  drugsDotPlot.margin().left +",0)")
       .attr('class','xAxis')
-      .call(xAxisBottom);
+      .call(xAxisBottom)
+      .select('path')
+      .attr('stroke','#979797')
 
   /* buttons */
   var btn = [
