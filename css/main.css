@@ -146,6 +146,7 @@ ul {
   position: relative;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 75px 0 25px;
+  min-height: 500px;
 }
 
 /*End viz page layout*/
@@ -158,6 +159,38 @@ ul {
 .legendBottom,
 .legendTop{
   height: 20px;
+}
+
+/* loader*/
+
+.nwLoaderContainer{
+  position: relative;
+}
+
+.loaderContainer{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+  background-color: rgba(128,128,128,0.2);
+  z-index: 9999;
+}
+
+.loader{
+  position: relative;
+  left: 50%;
+  top: 50%;
+}
+
+.loader .glyphicon-refresh.spinning {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
 }
 
 /* edits */
@@ -185,6 +218,8 @@ ul {
 
 .nwRow{
   border: 1px solid #f8f8f8;
+  /*margin-left: 0px;
+  margin-right: 0px;*/
 }
 
 .nwLegend{

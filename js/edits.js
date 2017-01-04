@@ -57,7 +57,7 @@ d3.tsv(dataFile, parseTsv,function(data){
       viz.datum(groups)
         .call(drugsSmallMultiple)
     })
-    
+
   /* visualization */
 
   var groups = d3.nest()
@@ -86,6 +86,15 @@ d3.tsv(dataFile, parseTsv,function(data){
 
   viz.datum(groups)
     .call(drugsSmallMultiple)
+
+    d3.select('.loaderContainer')
+      .transition()
+      .on('end', function(d){
+        d3.select(this).style('display', 'none')
+      })
+      .duration(1000)
+      .style('opacity', '0')
+
 
 });
 

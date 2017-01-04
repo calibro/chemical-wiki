@@ -284,4 +284,13 @@ sigma.parsers.json(dataFile, {
        },500)
       }
     });
+
+    d3.select('.loaderContainer')
+      .transition()
+      .on('end', function(d){
+        d3.select(this).style('display', 'none')
+      })
+      .duration(1000)
+      .style('opacity', '0')
+      
 });

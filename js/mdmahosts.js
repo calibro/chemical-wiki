@@ -76,4 +76,12 @@ d3.html(staticFolder + '/index.html',function(data){
       };
   }
 
+  d3.select('.loaderContainer')
+    .transition()
+    .on('end', function(d){
+      d3.select(this).style('display', 'none')
+    })
+    .duration(1000)
+    .style('opacity', '0')
+
 });
