@@ -76,7 +76,7 @@ ul {
   min-height: 50px;
   background-color: white;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #E8E8E8;
   z-index: 9999;
 }
 
@@ -104,6 +104,37 @@ ul {
 
 #chemicalHeaderCollapse.open{
     transform: translate(0,0);
+}
+
+/* back - next */
+#back,
+#next {
+  position: fixed;
+  bottom: 0px;
+  top: 0px;
+  background-color: white;
+  z-index: 10;
+  border: 1px solid #E8E8E8;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+#back{
+  left: 0px;
+}
+
+#next{
+  right: 0px;
 }
 
 /*Viz page layout*/

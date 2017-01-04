@@ -1,5 +1,6 @@
 ---
-layout: exploration-network
+layout: exploration
+network: true
 category: designer
 published: true
 title: References hosts network

@@ -1,5 +1,6 @@
 ---
-layout: exploration-network
+layout: exploration
+network: true
 category: designer
 published: true
 title: Editors network
@@ -14,18 +15,18 @@ data: editors.json
 ### Introduction and “How to read”
 
 In this network visualization, we wanted to explore whether the editors of designer drug articles cluster in communities, i.e. whether the same people edit similar articles.
-The visualization shows a network graph, in which the editors appear as gray squares, and the articles as colorful dots. The color is derived from the category of the substance, as follows: 
+The visualization shows a network graph, in which the editors appear as gray squares, and the articles as colorful dots. The color is derived from the category of the substance, as follows:
 
-Synthetic Cannabimimetics = 
+Synthetic Cannabimimetics =
 Psychedelics =
-Stimulants = 
-Nootropics = 
-Empathogens = 
-Sedatives = 
-Androgens = 
+Stimulants =
+Nootropics =
+Empathogens =
+Sedatives =
+Androgens =
 Dissociatives =
-Peptides = 
-Piperazines = 
+Peptides =
+Piperazines =
 PDES Inhibitors =
 
 Due to the algorithms of the network visualization software, article groups that are frequently edited by the same editors are drawn closely together. This leads to more or less dense clusters. The denser a cluster, the more we can talk about editor communities, as these article clusters are most frequently edited by the same group of people.
@@ -53,7 +54,5 @@ One bias of this graph lies in the fact that the exact contribution remain invis
 </div>
 
 <div class="references">
-### References
 
-[^1]: And here is the definition.
 </div>

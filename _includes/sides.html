@@ -1,0 +1,31 @@
+{% capture the_collection %}{{ page.collection }}{% endcapture %}
+
+{% if page.collection %}
+  {% assign document = site[the_collection] | where: "category", page.category %}
+{% endif %}
+
+{% for links in document %}
+  {% if links.title == page.title %}
+    {% unless forloop.first %}
+      {% assign prevurl = prev.url %}
+      {% assign prevtitle = prev.title %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next = document[forloop.index] %}
+      {% assign nexttitle = next.title %}
+      {% assign nexturl = next.url %}
+    {% endunless %}
+  {% endif %}
+  {% assign prev = links %}
+{% endfor %}
+<div id="back">
+  <a href="{{ prevurl | prepend: site.baseurl }}" type="button" class="btn btn-link {% unless prevurl %}disabled{% endunless %}">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+  </a>
+</div>
+
+<div id="next">
+  <a href="{{ nexturl | prepend: site.baseurl }}" type="button" class="btn btn-link {% unless nexturl %}disabled{% endunless %}">
+    <span class="glyphicon glyphicon-arrow-right"></span>
+  </a>
+</div>

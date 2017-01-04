@@ -4,6 +4,8 @@ layout: default
 
 {% include header.html %}
 
+{% include sides.html %}
+
 <div class="container">
   <div class="row viz-header">
     <div class="col-md-2">
@@ -37,14 +39,11 @@ layout: default
     <div class="col-md-3">
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <!-- Start Viz -->
-      <div class="viz">
-      </div>
-      <!-- End Viz -->
-    </div>
-  </div>
+  {% if page.network %}
+    {% include network.html%}
+  {% else %}
+    {% include viz.html%}
+  {% endif %}
   <div class="row">
     <div class="col-md-2">
     </div>
