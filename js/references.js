@@ -171,7 +171,7 @@ sigma.parsers.json(dataFile, {
 
       div.select("h4").remove()
       div.insert("h4", ".networkSide")
-      div.select("h4").text('linked articles')
+      div.select("h4").text('linked nodes')
 
       var divLink = div.select('.networkSide')
       divLink.selectAll('.linkButton').remove();
@@ -282,7 +282,7 @@ sigma.parsers.json(dataFile, {
        },500)
       }
     });
-    
+
     d3.select('.loaderContainer')
       .transition()
       .on('end', function(d){
