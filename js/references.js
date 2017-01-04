@@ -236,7 +236,7 @@ sigma.parsers.json(dataFile, {
 
         div.select("h4").remove()
         div.insert("h4", ".networkSide")
-        div.select("h4").text('linked substances')
+        div.select("h4").text('linked nodes')
 
         var divLink = div.select('.networkSide')
         divLink.selectAll('.linkButton').remove()
