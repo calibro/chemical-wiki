@@ -1,22 +1,70 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{'/' | prepend: site.baseurl }}">{{site.title}}</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            {% for item in site.pages %}
-              {% if item.title%}
-                <li class="{% if item.url == page.url %} active {% endif %}"><a href="{{item.url | prepend: site.baseurl}}">{{item.title}}</a></li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div><!--/.nav-collapse -->
+<div id="chemicalHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="navbar-toggle chemical-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{site.baseurl}}/">{{site.title}}</a>
+        {% if page.id == 'medical' or page.category == 'medical' %}
+          {% for cover in site.pages %}
+            {% if cover.id == 'medical'%}
+              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}">| 01. Risks and benefits</a>
+            {% endif%}
+          {% endfor%}
+        {% elsif page.id == 'designer' or page.category == 'designer' %}
+          {% for cover in site.pages %}
+            {% if cover.id == 'designer'%}
+              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}">| 02. Designer drugs</a>
+            {% endif%}
+          {% endfor%}
+        {% else %}
+          Other Page
+        {% endif %}
+        </a>
       </div>
-    </nav>
+    </div>
+  </div>
+</div>
+<div id="chemicalHeaderCollapse">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="{{site.baseurl}}/">
+          Intro
+        </a>
+      </div>
+      <div class="col-md-4">
+        {% for cover in site.pages %}
+          {% if cover.id == 'medical'%}
+            <a href="{{cover.url | prepend: site.baseurl}}">
+              <p>
+                01. Risks and benefits
+              </p>
+              <p>
+                {{cover.rq}}
+              </p>
+            </a>
+          {% endif%}
+        {% endfor%}
+      </div>
+      <div class="col-md-4">
+        {% for cover in site.pages %}
+          {% if cover.id == 'designer'%}
+            <a href="{{cover.url | prepend: site.baseurl}}">
+              <p>
+                02. Designer drugs
+              </p>
+              <p>
+                {{cover.rq}}
+              </p>
+            </a>
+          {% endif%}
+        {% endfor%}
+      </div>
+    </div>
+  </div>
+</div>
