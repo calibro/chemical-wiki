@@ -3,6 +3,8 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-family: 'Crimson Text', serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -193,6 +195,40 @@ ul {
     to { transform: scale(1) rotate(360deg); }
 }
 
+/* splashpage */
+
+.splashMobile{
+  position: absolute;
+  top:0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(255, 255, 255, 0.90);
+  z-index: 9999;
+  text-align: center;
+  display: flex!important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex!important;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.splashMobile a{
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.splashMobile a:hover{
+  color: black;
+  text-decoration: underline;
+}
+
 /* edits */
 
 .flow .tick line{
@@ -218,8 +254,6 @@ ul {
 
 .nwRow{
   border: 1px solid #f8f8f8;
-  /*margin-left: 0px;
-  margin-right: 0px;*/
 }
 
 .nwLegend{
@@ -508,4 +542,11 @@ ul {
 .tableContainer .table>tbody>tr>td>a:hover {
   color: #000;
   text-decoration: none;
+}
+
+@media (min-width:992px){
+  body{
+    overflow: auto;
+    height: auto;
+  }
 }
