@@ -101,4 +101,15 @@ layout: default
   <div style="display:none">
     {{content}}
   </div>
+  {% if jekyll.environment == 'production' or site.github %}
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-sm-8">
+      {% include disqus.html %}
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+  {% endif %}
 </div>
