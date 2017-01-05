@@ -600,9 +600,19 @@ opacity: 1;
   text-decoration: none;
 }
 
+#affixContainer.affix{
+  top:0px;
+  position: fixed;
+}
+
+#affixContainer.affix #researchQuestions{
+  margin-left: 58.33333333%;
+}
+
 @media (min-width:992px){
   body{
     overflow: auto;
     height: auto;
   }
+
 }
