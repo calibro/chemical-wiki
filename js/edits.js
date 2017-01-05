@@ -82,7 +82,7 @@ d3.tsv(dataFile, parseTsv,function(data){
                     .width(width)
                     .height(height)
                     .color(mainColor[0])
-                    .annotations(annotations)
+                    //.annotations(annotations)
 
   viz.datum(groups)
     .call(drugsSmallMultiple)
