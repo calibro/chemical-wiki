@@ -4,7 +4,7 @@ layout: default
 
 {% include header.html %}
 
-<div class="pageExHeader">
+<div class="pageExHeader background-{{page.id}}">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -17,22 +17,24 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 text-content">
       {{ content }}
     </div>
-    <div class="col-md-5 col-md-offset-1">
-      <h3>Explorations</h3>
+    <div class="col-md-5 col-md-offset-1 explorations-list">
+      <div class="explorations-title">
+        <h3>Explorations</h3>
+      </div>
       {% assign explorations = site.explorations | where: "category", page.id %}
       {% for exploration in explorations %}
-          <div class="media">
+          <div class="media explorations-box {{exploration.category}}-{{ forloop.index}}">
               <div class="media-left">
-                {{ forloop.index | prepend: '0'}}
+                <h2 class="numbers"><strong>{{ forloop.index | prepend: '0'}}</strong><h2>
               </div>
               <div class="media-body">
                 <h2 class="media-heading">{{ exploration.title }}</h2>
               </div>
               <div class="media-right">
-                <p><a href="{{ exploration.url | prepend: site.baseurl }}" class="btn btn-default" role="button">explore</a></p>
+                <p class="explore"><a href="{{ exploration.url | prepend: site.baseurl }}">explore</a></p>
               </div>
           </div>
       {% endfor %}

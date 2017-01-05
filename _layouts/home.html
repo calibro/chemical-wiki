@@ -14,7 +14,7 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 text-content">
       {{ content }}
     </div>
     <div id="affixContainer">
@@ -25,8 +25,8 @@ layout: default
             {% if page.id == 'medical' %}
               <h3>1. {{page.title}}</h3>
               <h2>{{page.rq}}</h2>
-              <p>
-                <a href="{{page.url | prepend: site.baseurl}}">explore</a>
+              <p class="explore">
+                <a href="{{page.url | prepend: site.baseurl}}">explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
               </p>
             {% endif %}
           {% endfor %}
@@ -38,8 +38,8 @@ layout: default
             {% if page.id == 'designer' %}
               <h3>2. {{page.title}}</h3>
               <h2>{{page.rq}}</h2>
-              <p>
-                <a href="{{page.url | prepend: site.baseurl}}">explore</a>
+              <p class="explore">
+                <a href="{{page.url | prepend: site.baseurl}}">explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
               </p>
             {% endif %}
           {% endfor %}

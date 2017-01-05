@@ -81,6 +81,7 @@ ol {
 
 .text-content ul, .text-content ol {
   margin-top: 17px;
+  margin-bottom: 34px;
 }
 
 /*header*/
@@ -174,6 +175,14 @@ opacity: 1;
   min-height: 500px;
 }
 
+.nw-top{
+  margin: 75px 0 10px;
+}
+
+.nw-bottom{
+  margin-bottom: 25px;
+}
+
 /*End viz page layout*/
 
 /*Home*/
@@ -195,6 +204,21 @@ opacity: 1;
   bottom: 20px;
 }
 
+.explore a{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.explore a:hover{
+  opacity: 1;
+  text-decoration: none;
+}
+
 #researchQuestions{
   border: 1px solid #D7D7D7;
 }
@@ -206,8 +230,117 @@ opacity: 1;
 .question h1{
   font-size: px;
 }
-
 /*End Home*/
+
+
+/*Start PageExplorations*/
+.pageExHeader {
+  min-height: 300px;
+  padding-top: 20px;
+  border-bottom: 1px solid #D7D7D7;
+}
+
+.background-medical, .background-designer {
+  position: relative;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.background-medical{
+  background-image: url("../media/cover_medical.png");
+}
+
+.background-designer{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-title{
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid #D7D7D7;
+}
+
+.explorations-box {
+  height: 100px;
+  border-bottom: 1px solid #D7D7D7;
+}
+
+.explorations-box h2{
+  font-size: 24px;
+  margin-top: 0;
+  padding-top: 25px;
+}
+
+.explorations-box p{
+  padding-top: 25px;
+}
+
+.explorations-box .numbers {
+  opacity: 0.2;
+}
+
+.media {
+  margin-top: 0
+}
+
+.explorations-box:hover{
+  background-position: right top;
+  background-size: cover;
+}
+
+.explorations-box.medical-1:hover{
+  background-image: url("../media/img.png");
+}
+
+.explorations-box.medical-2:hover{
+  background-image: url("../media/img.png");
+}
+
+.explorations-box.medical-3:hover{
+  background-image: url("../media/img.png");
+}
+
+.explorations-box.medical-4:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-box.medical-5:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-box.medical-6:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-box.medical-7:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-box.medical-8:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-box.designer-1:hover{
+  background-image: url("../media/img.png");
+}
+
+.explorations-box.designer-2:hover{
+  background-image: url("../media/img.png");
+}
+
+.explorations-box.designer-3:hover{
+  background-image: url("../media/img.png");
+}
+
+.explorations-box.designer-4:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+.explorations-box.designer-5:hover{
+  background-image: url("../media/cover_designer.png");
+}
+
+/*End PageExplorations*/
+
 
 .annotations path {
     fill: none;

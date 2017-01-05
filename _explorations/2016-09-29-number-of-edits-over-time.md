@@ -15,6 +15,7 @@ datasources:
 title: Number of edits over time
 custom_js: edits.js
 data: medical_edits.tsv
+
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
