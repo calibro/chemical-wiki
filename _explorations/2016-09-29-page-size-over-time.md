@@ -4,10 +4,14 @@ category: medical
 published: true
 title: Page size over time
 tools:
-  - Raw
+  - '[Xtools articleinfo](https://tools.wmflabs.org/xtools-articleinfo/)'
+  - '[Tableau](http://www.tableau.com/)'
+  - '[D3.js](https://d3js.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 authors:
   - Giorgio Uboldi
-  - Gabriele Colombo
+  - Louis Dijkstra
 custom_js: size.js
 data: medical_size.tsv
 ---

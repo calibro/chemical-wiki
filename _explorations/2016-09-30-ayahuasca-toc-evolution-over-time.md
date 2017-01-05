@@ -4,8 +4,14 @@ category: medical
 published: true
 title: Ayahuasca TOC evolution over time
 authors:
-  - Lisa Krieg
   - Matteo Azzi
+  - Lisa Krieg
+tools:
+  - '[Custom scripts](https://github.com/uf0/wiki-toc-scraper)'
+  - '[Tableau](http://www.tableau.com/)'
+  - '[D3.js](https://d3js.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 custom_js: tocAyahuasca.js
 data: ayahuasca_toc.tsv
 ---

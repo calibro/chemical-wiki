@@ -4,10 +4,14 @@ category: medical
 published: true
 title: MDMA TOC evolution over time
 authors:
-  - Lisa Krieg
   - Matteo Azzi
+  - Lisa Krieg
 tools:
-  - Tableau
+  - '[Custom scripts](https://github.com/uf0/wiki-toc-scraper)'
+  - '[Tableau](http://www.tableau.com/)'
+  - '[D3.js](https://d3js.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 custom_js: tocMDMA.js
 data: MDMA_toc.tsv
 ---

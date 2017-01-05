@@ -6,6 +6,13 @@ published: true
 title: Network of co-contribution on designer drug articles
 authors:
   - Louis Dijkstra
+  - Lisa Krieg
+tools:
+  - '[Custom scripts](https://github.com/louisdijkstra/chemical-youth)'
+  - '[Gephi](https://gephi.org/)'
+  - '[Sigma.js](http://sigmajs.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 custom_js: cocontribution.js
 data: cocontribution.json
 ---

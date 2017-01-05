@@ -8,7 +8,11 @@ authors:
   - Gabriele Colombo
   - Louis Dijkstra
 tools:
-  - Gephi
+  - '[Custom scripts](https://github.com/louisdijkstra/chemical-youth)'
+  - '[Gephi](https://gephi.org/)'
+  - '[Sigma.js](http://sigmajs.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 custom_js: references.js
 data: references.json
 ---

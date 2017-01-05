@@ -5,6 +5,14 @@ published: true
 title: Metrics of the designer drugs
 authors:
   - Giorgio Uboldi
+  - Gabriele Colombo
+tools:
+  - '[Xtools articleinfo](https://tools.wmflabs.org/xtools-articleinfo/)'
+  - '[Tableau](http://www.tableau.com/)'
+  - '[D3.js](https://d3js.org/)'
+  - '[OpenRefine](http://openrefine.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 custom_js: designerdrugsMetrics.js
 data: designerdrugs_metrics.tsv
 ---

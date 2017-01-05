@@ -4,10 +4,18 @@ category: medical
 published: true
 title: 'MDMA references: organizations hosts overtime'
 authors:
+  - Matteo Azzi
+  - Giorgio Uboldi
   - Natalia Sanchez-Querubin
+tools:
+  - '[Raw](raw.densitydesign.org)'
+  - Adobe Illustrator
+  - '[Ai2Html](http://ai2html.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 static: mdmahosts
 custom_js: mdmahosts.js
-data: mdmaHosts.csv
+data: mdmaHosts.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}

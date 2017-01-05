@@ -4,7 +4,14 @@ category: designer
 published: true
 title: EMCDDA watchlist and Wikipedia timeline
 authors:
+  - Moritz Berning
   - Giorgio Uboldi
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
+  - '[EMCDDA](http://www.emcdda.europa.eu/publications-database?f[0]=field_series_type:551)'
+tools:
+  - '[Tableau](http://www.tableau.com/)'
+  - '[D3.js](https://d3js.org/)'
 custom_js: watchlist.js
 data: watchlist.tsv
 ---

@@ -4,11 +4,17 @@ category: medical
 published: true
 title: 'MDMA references: field mentions overtime'
 authors:
-  - Gabriele Colombo
   - Natalia Sanchez-Querubin
+  - Gabriele Colombo
+tools:
+  - '[Raw](raw.densitydesign.org)'
+  - Adobe Illustrator
+  - '[Ai2Html](http://ai2html.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 static: mdmafields
 custom_js: mdmahosts.js
-data: mdmaFields.csv
+data: mdmaFields.tsv
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}

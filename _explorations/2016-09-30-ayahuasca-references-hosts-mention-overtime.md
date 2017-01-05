@@ -6,6 +6,12 @@ title: 'Ayahuasca references: hosts mention overtime'
 authors:
   - Gabriele Colombo
   - Natalia Sanchez-Querubin
+tools:
+  - '[Raw](raw.densitydesign.org)'
+  - Adobe Illustrator
+  - '[Ai2Html](http://ai2html.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 static: ayahuascafields
 custom_js: mdmahosts.js
 data: ayahuascafields.tsv

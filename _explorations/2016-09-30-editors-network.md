@@ -6,6 +6,13 @@ published: true
 title: Editors network
 authors:
   - Louis Dijkstra
+  - Giorgio Uboldi
+tools:
+  - '[Custom scripts](https://github.com/louisdijkstra/chemical-youth)'
+  - '[Gephi](https://gephi.org/)'
+  - '[Sigma.js](http://sigmajs.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 custom_js: editors.js
 data: editors.json
 ---

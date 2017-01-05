@@ -6,6 +6,12 @@ title: Evolution of title of the article “MDMA”
 authors:
   - Aleksi Hupli
   - Giorgio Uboldi
+tools:
+  - '[Wayback machine](https://archive.org/web/)'
+  - Adobe Illustrator
+  - '[Ai2Html](http://ai2html.org/)'
+datasources:
+  - Wikipedia API, English language, accessed between 11-15th July 2016
 static: mdmatitle
 custom_js: mdmahosts.js
 ---
