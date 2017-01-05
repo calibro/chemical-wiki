@@ -5,6 +5,7 @@ body{
   font-family: 'Crimson Text', serif;
   height: 100vh;
   overflow: hidden;
+  color: #000000;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -12,17 +13,11 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-font-size: 42px;
-color: #000000;
 font-weight: 300;
 }
 
 h2{
-  font-size: 42px;
-  font-weight: 900;
-  opacity: 0.2;
-  font-size: 42px;
-  color: #000000;
+  font-weight: 300;
 }
 
 h3{
@@ -36,13 +31,20 @@ margin-top: 70px;
 
 p{
 font-size: 24px;
-color: #000000;
+line-height: 34px;
 }
 
-li{
-font-family: 'Source Sans Pro', sans-serif;
-font-size: 14px!important;
-color: #000000;
+.side-lists li{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.reversefootnote {
+  color: #005AC4;
+}
+
+.footnotes li, .footnotes li p, .footnotes li a{
+font-family: 'Crimson', serif;
+font-size: 16px;
 letter-spacing: 0;
 }
 
@@ -55,7 +57,9 @@ ul {
   -webkit-padding-start: 0px;
 }
 
-.footnotes ol {
+ol {
+  display: block;
+  list-style-type: decimal;
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
   -webkit-margin-start: 0px;
@@ -63,11 +67,20 @@ ul {
   -webkit-padding-start: 0px;
 }
 
-.footnotes a {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 14px!important;
-  color: #000000;
+.text-content p{
+  font-family: 'Crimson', serif;
+  font-size: 24px;
   letter-spacing: 0;
+}
+
+.text-content li {
+  font-family: 'Crimson', serif;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.text-content ul, .text-content ol {
+  margin-top: 17px;
 }
 
 /*header*/
@@ -114,7 +127,7 @@ ul {
   position: fixed;
   bottom: 0px;
   top: 0px;
-  background-color: white;
+  background-color: #fff;
   z-index: 10;
   border: 1px solid #E8E8E8;
   display: -webkit-flex;
@@ -129,6 +142,10 @@ ul {
   align-content: center;
   -webkit-align-items: center;
   align-items: center;
+  width: 72px;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 #back{
@@ -137,6 +154,12 @@ ul {
 
 #next{
   right: 0px;
+}
+
+#back:hover,
+#next:hover {
+background-color: #FBF9F9;
+opacity: 1;
 }
 
 /*Viz page layout*/
@@ -152,6 +175,39 @@ ul {
 }
 
 /*End viz page layout*/
+
+/*Home*/
+.homeHeader {
+  min-height: 600px;
+  color:white;
+  position: relative;
+  background-image: url("../media/cover_home.png");
+  background-position: right bottom;
+  background-size: cover;
+}
+
+.homeHeader h1{
+  font-size: 42px;
+}
+
+.homeHeader .homeTitle{
+  position: absolute;
+  bottom: 20px;
+}
+
+#researchQuestions{
+  border: 1px solid #D7D7D7;
+}
+
+.question {
+  padding: 10px 20px;
+}
+
+.question h1{
+  font-size: px;
+}
+
+/*End Home*/
 
 .annotations path {
     fill: none;
