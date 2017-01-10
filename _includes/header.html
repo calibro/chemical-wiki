@@ -8,17 +8,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{site.baseurl}}/">{{site.title}}</a>
+        <a class="navbar-brand" href="{{site.baseurl}}/">{{site.title}}<span class="pipe">|</span></a>
         {% if page.id == 'medical' or page.category == 'medical' %}
           {% for cover in site.pages %}
             {% if cover.id == 'medical'%}
-              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}">| 01. Risks and benefits</a>
+              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}"> 01. Risks and benefits</a>
             {% endif%}
           {% endfor%}
         {% elsif page.id == 'designer' or page.category == 'designer' %}
           {% for cover in site.pages %}
             {% if cover.id == 'designer'%}
-              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}">| 02. Designer drugs</a>
+              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}"> 02. Designer drugs</a>
             {% endif%}
           {% endfor%}
         {% else %}
@@ -30,37 +30,41 @@
   </div>
 </div>
 <div id="chemicalHeaderCollapse">
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
-      <div class="col-md-4">
-        <a href="{{site.baseurl}}/">
-          Intro
+      <div class="col-md-4 header-box">
+        <h3>
+          00. Home
+        </h3>
+        <h2><a href="{{site.baseurl}}/">
+          About the project
         </a>
+      </h2>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 header-box">
         {% for cover in site.pages %}
           {% if cover.id == 'medical'%}
             <a href="{{cover.url | prepend: site.baseurl}}">
-              <p>
+              <h3>
                 01. Risks and benefits
-              </p>
-              <p>
+              </h3>
+              <h2>
                 {{cover.rq}}
-              </p>
+              </h2>
             </a>
           {% endif%}
         {% endfor%}
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 header-box">
         {% for cover in site.pages %}
           {% if cover.id == 'designer'%}
             <a href="{{cover.url | prepend: site.baseurl}}">
-              <p>
+              <h3>
                 02. Designer drugs
-              </p>
-              <p>
+              </h3>
+              <h2>
                 {{cover.rq}}
-              </p>
+              </h2>
             </a>
           {% endif%}
         {% endfor%}
