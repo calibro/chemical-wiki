@@ -173,6 +173,40 @@ ol {
 .header-box:hover{
   background-color: #2F64A2;
 }
+/*fine header*/
+
+/*Footer*/
+.footer{
+  background-color: #F9F9F9;
+  padding: 70px 0 100px;;
+  margin-top: 70px;
+}
+
+.footer h3{
+  margin-top: 0;
+}
+
+.footer p{
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.footer img{
+  width: 110px;
+  margin-top: 0px;
+}
+
+.footer .logo-calibro{
+  width: 140px;
+  margin-top: 20px;
+}
+
+.footer .fa{
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+/*Fine footer*/
 
 /* back - next */
 #back,
