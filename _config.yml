@@ -13,7 +13,7 @@ url: "http://calibro.github.io" # the base hostname & protocol for your site
 permalink: /:categories/:title
 include: ['_pages']
 analytics: 'xx-xxxxx'
-disqus: 'xx-xxxxx'
+disqus: 'chemicalknowledge'
 # Collections
 collections:
   explorations:
