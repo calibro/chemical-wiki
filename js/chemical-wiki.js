@@ -6,7 +6,8 @@ $( document ).ready(function() {
 
     $('#affixContainer').affix({
       offset: {
-        top: $('.homeHeader').outerHeight(true)
+        top: $('.homeHeader').outerHeight(true),
+        bottom: $('.footer').outerHeight()
       }
     })
 

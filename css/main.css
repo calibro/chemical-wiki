@@ -844,8 +844,13 @@ opacity: 1;
   position: fixed;
 }
 
-#affixContainer.affix #researchQuestions{
+#affixContainer.affix #researchQuestions,
+#affixContainer.affix-bottom #researchQuestions{
   margin-left: 58.33333333%;
+}
+
+#affixContainer.affix-bottom{
+  position: fixed;
 }
 
 @media (min-width:992px){
