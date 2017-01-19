@@ -42,7 +42,7 @@ sigma.parsers.json(dataFile, {
 
     var colors = chemicalwiki.colors().qualitative('designer');
     colors.unshift('#84304b');
-    colors.unshift('#000');
+    colors.unshift('rgba(248, 248, 248, 0.5)');
     var keys = d3.set(sigInst.graph.nodes(),function(d){return d.attributes.SubstanceCat}).values()
     var colorScale = d3.scaleOrdinal().domain(keys).range(colors)
 
@@ -73,12 +73,12 @@ sigma.parsers.json(dataFile, {
       })
       .style('margin-right','15px')
 
-    sigInst.graph.nodes().forEach(function(e){
+    sigInst.graph.nodes().forEach(function(e,i){
       e.type = 'border';
       e.color = colorScale(e.attributes.SubstanceCat)
-      // if(e.attributes.Type == "User"){
-      //   e.label = 'Editor'
-      // }
+      if(e.attributes.Type == "User"){
+        e.label = 'Editor ' + (i+1)
+      }
     });
 
     sigInst.graph.edges().forEach(function(e){
