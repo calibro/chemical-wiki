@@ -24,17 +24,17 @@ data: editors.json
 In this network visualization, we wanted to explore whether the editors of designer drug articles cluster in communities, i.e. whether the same people edit similar articles.
 The visualization shows a network graph, in which the editors appear as gray squares, and the articles as colorful dots. The color is derived from the category of the substance, as follows:
 
-Synthetic Cannabimimetics =
-Psychedelics =
-Stimulants =
-Nootropics =
-Empathogens =
-Sedatives =
-Androgens =
-Dissociatives =
-Peptides =
-Piperazines =
-PDES Inhibitors =
+* Synthetic Cannabimimetics
+* Psychedelics
+* Stimulants
+* Nootropics
+* Empathogens
+* Sedatives
+* Androgens
+* Dissociatives
+* Peptides
+* Piperazines
+* PDES Inhibitors
 
 Due to the algorithms of the network visualization software, article groups that are frequently edited by the same editors are drawn closely together. This leads to more or less dense clusters. The denser a cluster, the more we can talk about editor communities, as these article clusters are most frequently edited by the same group of people.
 Bots (Wikipedia's automatic changes), anonymous editors, and editors who made only one edit or only minor edits have been filtered out and do not appear on this map.

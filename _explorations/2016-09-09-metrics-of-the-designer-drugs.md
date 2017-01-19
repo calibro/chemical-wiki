@@ -21,9 +21,9 @@ data: designerdrugs_metrics.tsv
 <div class="intro">
 ### Introduction and “How to read”
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum. Quisque luctus ex elit, sed semper elit pharetra vel. Donec luctus orci ante, eget tincidunt purus tempor vitae[^1].Cras imperdiet feugiat varius. Fusce condimentum justo vitae ante pulvinar vulputate et non metus. In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec.
+This visualization shows the metrics of all the designer drugs that we found on Wikipedia. By default, they are sorted by name which can be changed by a left click onto the different categories from “Substance” to “First & Last Edit”. “Page Size (Byte)” shows how big the articles are in terms of Bytes which can give a hint about the extent to which the drug is being described and discussed. The “Total Edits” indicate how often an article has been edited so far which can be related to controversies or drugs populated by the media. The “Editors” are the number of people who have been involved in editing the article. Again, many editors can indicate a public interest. The number of “External Links” shows how many links in the article refer to sources outside of Wikipedia. “First & Last Edit” describe how long an article about a substance has been around.
+All substance groups can be selected and deselected on the top left. To reset the view, one can use the button to the right.
 
-Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
 </div>
 
 <div class="protocol">
@@ -39,7 +39,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 <div class="findings">
 ### Bias(es) and findings
 
-In ut fringilla tellus. Integer viverra, nisi suscipit facilisis suscipit, ante est venenatis mauris, eget sodales enim felis id mauris. Mauris suscipit diam libero, sed eleifend mi fringilla nec. Proin sit amet risus a dolor feugiat consequat. Mauris quis elit dignissim, lacinia leo et, ornare nibh.
+Using the different modes of sorting the articles, it becomes clear that many popular designer drugs like 2C-I, Mephedrone or JWH-018 are also significant on Wikipedia when it comes to edits and editors. However, many substances related to growth hormones are also widely discussed. The fields of recreational drug research and for instance monitoring performance enhancing drugs (PEDs) in sports could be a further way to use these digital analyses. One must be careful with the interpretation for instance of the article age because it does not necessarily reflect the age of the substance. Often substances are also added in groups which says more over a certain editing practice than the novelty of the drugs.  
+
 </div>
 
 <div class="references">
