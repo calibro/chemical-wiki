@@ -41,9 +41,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 Most designer drug articles refer to scientific sources represented by NCBI which could indicate that even new designer drugs are relatively well covered by scientific research. It is by far the most significant node in the network which also confirms the tendency of Wikipedia to shift towards more scientific references in general. However, with some groups of substances, the lack of formal knowledge becomes obvious and user generated sources like Erowid.org. Since some designer drugs are not covered by pharmaceutical research yet, hosts from chemistry like commonchemistry.org also play a certain role. On the left, there is also a search window to look for specific hosts or substances within the network.
 
 </div>
-
-<div class="references">
-### References
-
-[^1]: And here is the definition.
-</div>

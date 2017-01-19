@@ -59,7 +59,3 @@ Another way to use this graph is to look at the ego-networks of single editors. 
 One bias of this graph lies in the fact that the exact contribution remain invisible. While we can get an idea about how many contributions an editor makes, we do not know if a large part of this is maintenance. An editor who contributed several in-depth segments of text appears here as less significant than an editor who writes little, but does a lot of formatting. The colour-coding of the articles also needs to be considered carefully. We used Wikipedia's own categories for the substance articles, because manual categorization for such a large data set would have been too time consuming. Alternative categories, such as regarding the main function, use, or mode of consumption of the substance, are neglected here.
 
 </div>
-
-<div class="references">
-
-</div>

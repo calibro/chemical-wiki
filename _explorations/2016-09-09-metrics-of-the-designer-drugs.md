@@ -42,9 +42,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit a
 Using the different modes of sorting the articles, it becomes clear that many popular designer drugs like 2C-I, Mephedrone or JWH-018 are also significant on Wikipedia when it comes to edits and editors. However, many substances related to growth hormones are also widely discussed. The fields of recreational drug research and for instance monitoring performance enhancing drugs (PEDs) in sports could be a further way to use these digital analyses. One must be careful with the interpretation for instance of the article age because it does not necessarily reflect the age of the substance. Often substances are also added in groups which says more over a certain editing practice than the novelty of the drugs.  
 
 </div>
-
-<div class="references">
-### References
-
-[^1]: And here is the definition.
-</div>

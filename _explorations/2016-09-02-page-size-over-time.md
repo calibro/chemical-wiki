@@ -42,9 +42,3 @@ This maps shows a few interesting issues. Firstly, vandalism appears as a signif
 
 Biases of this map lie in the issue of vandalism, and in the distant view of the map and the single focus on size. While we attempted to make vandalism visible and remove it from the map for better readability, it remains problematic. It is not always possible to identify vandalism, and distinguish it e.g. from disagreements between editors, or editing accidents. The reason for vandalism is also not visible on this map. The single focus on size gives a good overview, but it also means that pictures, with their larger sizes than text, get more weight in the graph than text. The qualitative content of the change is invisible. Removing or adding a few pictures appears on this map as a significant change, while changes in the text of the article can be almost invisible.
 </div>
-
-<div class="references">
-### References
-
-[^1]: And here is the definition.
-</div>

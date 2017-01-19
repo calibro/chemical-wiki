@@ -43,9 +43,3 @@ This analysis shows that a lot of space of the MDMA article is dedicated to the 
 
 This method is used in a rather exploratory fashion, as a proxy for the content of the changing article versions. It is based on a qualitative categorization of section headings into one of the four categories, and into sounding either benefit-focused, neutral, or risk-focused. This categorization is rather crude, and only based on the title, not on the content of the section. It is thus prone to contain errors, and has to be taken as showing a trend rather than a precise development.
 </div>
-
-<div class="references">
-### References
-
-[^1]: And here is the definition.
-</div>

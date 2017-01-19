@@ -41,7 +41,3 @@ The first thing that becomes visible is that the name of the Wikipedia website c
 The lively discussions on Wikipedia about the terminology reflects the difficulties of for instance journalists, to distinct MDMA in its different forms as crystals (“Molly”, “Mandy”, “MDMA”) or pills (“XTC”, “X”, etc.). They also show the tensions inherent in the editor community, and the competition of values among the editors: scientific accuracy on the one hand would support the correct chemical name, but usability supports the more common term of MDMA or Ecstasy. Such discussions are circular, as they are never settled for good on a dynamic platform.
 
 </div>
-
-<div class="references">
-### References
-</div>
