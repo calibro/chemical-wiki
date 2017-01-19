@@ -3,8 +3,6 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-family: 'Crimson Text', serif;
-  height: 100vh;
-  overflow: hidden;
   color: #000000;
 }
 
@@ -229,7 +227,7 @@ ol {
   align-content: center;
   -webkit-align-items: center;
   align-items: center;
-  width: 72px;
+  width: 25px;
   opacity: 0.8;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -327,6 +325,7 @@ opacity: 1;
 
 #researchQuestions{
   border: 1px solid #D7D7D7;
+  background: white;
 }
 
 .question {
@@ -493,7 +492,7 @@ opacity: 1;
 /* splashpage */
 
 .splashMobile{
-  position: absolute;
+  position: fixed;
   top:0px;
   bottom: 0px;
   left: 0px;
@@ -841,22 +840,39 @@ opacity: 1;
 
 #affixContainer.affix{
   top:0px;
-  position: fixed;
+  position:inherit;
 }
 
 #affixContainer.affix #researchQuestions,
 #affixContainer.affix-bottom #researchQuestions{
-  margin-left: 58.33333333%;
+  margin-left: inherit;
 }
 
 #affixContainer.affix-bottom{
-  position: fixed;
+  position: inherit;
 }
 
 @media (min-width:992px){
-  body{
-    overflow: auto;
-    height: auto;
+  #affixContainer.affix{
+    top:0px;
+    position: fixed;
   }
 
+  #affixContainer.affix #researchQuestions,
+  #affixContainer.affix-bottom #researchQuestions{
+    margin-left: 58.33333333%;
+  }
+
+  #affixContainer.affix-bottom{
+    position: fixed;
+  }
+
+}
+
+@media (min-width:1200px){
+
+  #back,
+  #next{
+    width: 50px;
+  }
 }

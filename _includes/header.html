@@ -8,22 +8,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{site.baseurl}}/">{{site.title}}<span class="pipe">|</span></a>
+        <a class="navbar-brand" href="{{site.baseurl}}/">{{site.title}}<span class="pipe hidden-xs hidden-sm">|</span></a>
         {% if page.id == 'medical' or page.category == 'medical' %}
           {% for cover in site.pages %}
             {% if cover.id == 'medical'%}
-              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}"> 01. Risks and benefits</a>
+              <a class="navbar-brand subcategory hidden-xs hidden-sm" href="{{cover.url | prepend: site.baseurl}}"> 01. Risks and benefits</a>
             {% endif%}
           {% endfor%}
         {% elsif page.id == 'designer' or page.category == 'designer' %}
           {% for cover in site.pages %}
             {% if cover.id == 'designer'%}
-              <a class="navbar-brand subcategory" href="{{cover.url | prepend: site.baseurl}}"> 02. Designer drugs</a>
+              <a class="navbar-brand subcategory hidden-xs hidden-sm" href="{{cover.url | prepend: site.baseurl}}"> 02. Designer drugs</a>
             {% endif%}
           {% endfor%}
         {% else %}
           Other Page
-          
+
         {% endif %}
         </a>
       </div>
