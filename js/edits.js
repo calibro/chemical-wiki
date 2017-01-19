@@ -26,7 +26,7 @@ d3.tsv(dataFile, parseTsv,function(data){
   /* buttons */
   var btn = ['relative','absolute']
   var btnGroup = viz.append('div')
-    .attr('class', 'btn-group')
+    .attr('class', 'btn-group pull-right')
     .attr('role', 'group')
 
   var btns = btnGroup.selectAll('.btn')

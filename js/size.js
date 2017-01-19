@@ -13,7 +13,7 @@ d3.tsv(dataFile, parseTsv,function(data){
 
   var btn = ['relative','absolute']
   var btnGroup = legendContainer.append('div')
-    .attr('class', 'btn-group')
+    .attr('class', 'btn-group pull-right')
     .attr('role', 'group')
 
   var btns = btnGroup.selectAll('.btn')
@@ -48,6 +48,7 @@ d3.tsv(dataFile, parseTsv,function(data){
     //var checkDiv = legendContainer.append('div')
 
     legendContainer.append('input')
+      .attr('class', 'vandalism-check')
       .attr('type', 'checkbox')
       .property("checked", true)
       .on('change', function(){
@@ -58,7 +59,8 @@ d3.tsv(dataFile, parseTsv,function(data){
           .call(drugsSmallMultiple)
       })
 
-    legendContainer.append('span').text(' with vandalism')
+    legendContainer.append('span').attr('class','vandalism-text').text(' with vandalism')
+    legendContainer.append('div').style('clear','both')
 
   var mainColor = chemicalwiki.colors().main('medical')
 

@@ -261,6 +261,26 @@ opacity: 1;
   min-height: 500px;
 }
 
+.viz .btn.btn-default{
+  border-radius: 30px;
+}
+
+.viz .btn.btn-default span.glyphicon{
+  font-size: 10px;
+}
+
+.viz .legend .vandalism-check{
+  margin-right: 15px;
+    margin-left: 5px;
+    margin-top: 12px;
+    float: right;
+}
+
+.viz .legend .vandalism-text{
+    float: right;
+    margin-top: 7px;
+}
+
 .nw-top{
   margin: 75px 0 10px;
 }
