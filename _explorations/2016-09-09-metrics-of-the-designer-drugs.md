@@ -29,10 +29,10 @@ All substance groups can be selected and deselected on the top left. To reset th
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We dowloaded some metrics for all the *designer drugs* that we can obtain using [xtools-articleinfo](https://tools.wmflabs.org/xtools-articleinfo/) and [KimonoLabs](https://www.kimonolabs.com/) to automate the process.
+2. The results have been parsed/cleaned then using OpenRefine.
+3. We used Tableau to explore the data.
+4. The final visualization is implemented in d3.js.
 
 </div>
 

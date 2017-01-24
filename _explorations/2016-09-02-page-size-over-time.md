@@ -28,10 +28,11 @@ The normalized view of the map removes relative differences between small and la
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We selected 9 wikipedia article URLs and for each of them we used [wikipedia2geo](https://tools.digitalmethods.net/beta/wikipedia2geo/) to get all the edits.
+Attached to each edit we have the size of the page.
+2. We merged the files and we used Tableau to explore the data.
+3. Sometimes the size of the page increases or decreases unexpectedly. That's due probably to *vandalism*. We quickly calculated and isolated the outliers (1.5 IQR) and added a checkbox to remove them from the visualization.
+3. The final visualization is implemented in d3.js and rendered in _canvas_ due to the large amount of element to visualize (>50k).
 
 </div>
 

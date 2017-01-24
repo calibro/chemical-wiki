@@ -29,10 +29,11 @@ Due to the mass of data, we did not look at all the section headings, but only a
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We downloaded all the revisions id and through the [Wikipedia API](https://en.wikipedia.org/w/api.php?action=help&modules=parse) we queried just the TOC.
+2. We extracted all the unique _Titles_ and selected just the one we were interested in.
+3. From that list we look at the evolution over time of each _Title_ taking in account the position inside the TOC and the amount of text (expressed in byte).
+4. We used Tableau to explore the data.
+5. We used Raw to visualize the results.
 
 </div>
 

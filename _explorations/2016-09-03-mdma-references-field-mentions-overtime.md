@@ -7,7 +7,7 @@ authors:
   - Natalia Sanchez-Querubin
   - Gabriele Colombo
 tools:
-  - '[Raw](raw.densitydesign.org)'
+  - '[Raw](http://rawgraphs.io)'
   - Adobe Illustrator
   - '[Ai2Html](http://ai2html.org/)'
 datasources:
@@ -28,10 +28,10 @@ Which scientific fields supply the knowledge on which this article is based? We 
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. The page was captured on one day of November 2003-2015 and the present one for the year of 2016. All _supporting items_ found below the text are copied and then pasted on a spreadsheet. This includes the subtitles that represent the categories, for example _further readings_ or _references_
+2. A list of most recurrent keywords per year was extracted, only keeping keywords that are present at least more than two years.
+3. Keywords were manually grouped by categories.
+4. We used Raw to visualize the results.
 
 </div>
 

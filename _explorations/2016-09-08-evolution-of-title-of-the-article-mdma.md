@@ -27,10 +27,8 @@ In this section, we wanted to have a closer look at the MDMA Wikipedia article a
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We analyzed how the page about MDMA changed titles over time through a close reading of the talk using the [Wayback Machine](https://archive.org/web/).
+2. The quotes come from the talk page and they have been manually selected and extracted.
 
 </div>
 

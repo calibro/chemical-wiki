@@ -27,10 +27,11 @@ How up to date is the knowledge about designer drugs on Wikipedia? In order to e
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We chacked all the [designer drugs](https://en.wikipedia.org/wiki/List_of_designer_drugs) of the Wikipedia list that are also present in the EMCDDA’s watchlist.
+2. We downloaded all the EMCDDA’s reports from here and we manually filled the spreadsheet with the date the substance has been added to the EMCDDA’s list.
+3. We than enriched the file getting the date of the first edit on Wikipedia and the category.
+4. We used Tableau to explore the data.
+5. The final visualization is implemented in d3.js.
 
 </div>
 

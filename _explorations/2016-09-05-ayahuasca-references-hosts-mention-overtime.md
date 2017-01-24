@@ -7,7 +7,7 @@ authors:
   - Gabriele Colombo
   - Natalia Sanchez-Querubin
 tools:
-  - '[Raw](raw.densitydesign.org)'
+  - '[Raw](http://rawgraphs.io)'
   - Adobe Illustrator
   - '[Ai2Html](http://ai2html.org/)'
 datasources:
@@ -28,10 +28,10 @@ The X-axis represents the years that the Wikipedia website already exists, from 
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We downloaded all the _external links_ for each first revision for each month since the page was created. We used the [Wikipedia API](https://en.wikipedia.org/w/api.php?action=help&modules=parse) through custom scripts written in _Node.js_.
+2. We extracted the hosts for each url and aggregated them per year.
+3. We kept the hosts that are present at least more than 3 years.
+4. We used Raw to visualize the results
 
 </div>
 

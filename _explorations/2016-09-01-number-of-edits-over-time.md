@@ -30,10 +30,9 @@ The normalized view of the map removes relative differences between pages with m
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We selected 9 wikipedia article URLs and for each of them we used [wikipedia2geo](https://tools.digitalmethods.net/beta/wikipedia2geo/) to get all the edits.
+2. We merged the files and we used Tableau to explore the data.
+3. The final visualization is implemented in d3.js
 
 </div>
 
