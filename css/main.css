@@ -204,6 +204,10 @@ ol {
   margin-right: 10px;
 }
 
+.doi-badge img{
+  width: 150px;
+}
+
 /*Fine footer*/
 
 /* back - next */
@@ -285,6 +289,10 @@ opacity: 1;
 
 .nw-bottom{
   margin-bottom: 25px;
+}
+
+#disqus_thread{
+  margin-top: 50px;
 }
 
 /*End viz page layout*/
