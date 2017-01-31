@@ -425,23 +425,23 @@ opacity: 1;
 }
 
 .explorations-box.designer-1:hover{
-  background-image: url("../media/img.png");
+  background-image: url("../media/designer-1.png");
 }
 
 .explorations-box.designer-2:hover{
-  background-image: url("../media/img.png");
+  background-image: url("../media/designer-2.png");
 }
 
 .explorations-box.designer-3:hover{
-  background-image: url("../media/img.png");
+  background-image: url("../media/designer-3.png");
 }
 
 .explorations-box.designer-4:hover{
-  background-image: url("../media/img.png");
+  background-image: url("../media/designer-4.png");
 }
 
 .explorations-box.designer-5:hover{
-  background-image: url("../media/img.png");
+  background-image: url("../media/designer-5.png");
 }
 
 /*End PageExplorations*/
