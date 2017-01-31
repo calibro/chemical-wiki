@@ -292,7 +292,8 @@ opacity: 1;
 }
 
 .comments{
-  margin-top: 50px;
+  margin-top: 120px;
+  border-top: 1px solid #E8E8E8;
 }
 
 /*End viz page layout*/
