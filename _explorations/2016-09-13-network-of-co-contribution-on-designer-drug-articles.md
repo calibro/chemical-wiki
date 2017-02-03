@@ -8,7 +8,7 @@ authors:
   - Louis Dijkstra
   - Lisa Krieg
 tools:
-  - '[Custom scripts](https://github.com/louisdijkstra/chemical-youth)'
+  - '[Custom scripts](https://github.com/louisdijkstra/wikiscraper)'
   - '[Gephi](https://gephi.org/)'
   - '[Sigma.js](http://sigmajs.org/)'
 datasources:
@@ -29,10 +29,13 @@ The colour coding of the nodes gives a hint as to how distinct the contribution 
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. For each designer drugs we used the [xtools-articleinfo](https://tools.wmflabs.org/xtools-articleinfo/) tool to get the users who contributed to the articles.
+2. For each user we get the other wikipedia articles he/she contributed the most through [xtools-topedits](https://tools.wmflabs.org/xtools/topedits/) tool.
+3. We used [custom scripts](https://github.com/louisdijkstra/wikiscraper) written in Python and R to generate the network.
+4. We used Gephi to explore the network.
+5. We reduced the original number of nodes (which is over 200,000) by selecting the top 250 articles that received most contributions from the designer drug community, which yielded a set of 7745.
+6. In addition, we filtered out nodes with a degree of 1; edges with a weight less than 3 were removed as well.
+7. We used Sigma.js to visualize the results
 
 </div>
 

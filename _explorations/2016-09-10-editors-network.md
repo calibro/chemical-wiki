@@ -43,10 +43,11 @@ Bots (Wikipedia's automatic changes), anonymous editors, and editors who made on
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. For each designer drugs we used the [xtools-articleinfo](https://tools.wmflabs.org/xtools-articleinfo/) tool to get the users who contributed to the articles.
+2. For each user we get the other designer drug articles he/she contributed the most through [xtools-topedits](https://tools.wmflabs.org/xtools/topedits/) tool.
+3. We used custom scripts written in Python to generate the network
+4. We used Gephi to explore the network .
+5. We used Sigma.js to visualize the results
 
 </div>
 

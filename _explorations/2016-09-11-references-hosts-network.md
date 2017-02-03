@@ -28,10 +28,10 @@ In this visualization, the different categories of designer drugs are sorted by 
 <div class="protocol">
 ### How the map is built
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus velit ac tortor bibendum, sit amet lobortis lectus pulvinar. Pellentesque ultricies massa sit amet ipsum pharetra bibendum.
-
-1. step bla bla
-2. step etc
+1. We downloaded all the external links for each designer drugs. We used the [Wikipedia](https://en.wikipedia.org/w/api.php?action=help&modules=parse) API through custom scripts written in Python.
+2. We extracted the hosts for each url.
+3. We used Gephi to explore the network and apply filters.
+4. We used Sigma.js to visualize the results
 
 </div>
 
