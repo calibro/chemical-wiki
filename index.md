@@ -19,5 +19,3 @@ We focused our explorations on two different sets of substances:
 
 1. a set of rather well-known psychoactive substances, which are controversially discussed in terms of their risks and potential benefits, and
 2. a set of roughly 500 designer drugs, psychoactive substances about most of which relatively little knowledge is established.
-
-**The results are presented here on this website**.
