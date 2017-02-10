@@ -210,6 +210,25 @@ ol {
 
 /*Fine footer*/
 
+#home-tab li a{
+  font-size: 12px;
+  color: #005AC4;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#home-tab-content pre{
+  background-color: #f8f8f8;
+  border-radius: 0px;
+  border: 1px solid #D7D7D7;
+}
+
+#home-tab.nav-tabs>li>a {
+  border-radius: 0px;
+}
+
 /* back - next */
 #back,
 #next {
@@ -845,6 +864,10 @@ opacity: 1;
 .tableContainer .table>tbody>tr>td>a:hover {
   color: #000;
   text-decoration: none;
+}
+
+#affixContainer{
+    z-index: -1;
 }
 
 #affixContainer.affix{

@@ -15,7 +15,24 @@ layout: default
 <div class="container">
   <div class="row">
     <div class="col-md-6 text-content">
-      {{ content }}
+      <ul id="home-tab" class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#introduction" aria-controls="introduction" role="tab" data-toggle="tab">Introduction</a></li>
+        <li role="presentation"><a href="#howtocite" aria-controls="howtocite" role="tab" data-toggle="tab">How to cite</a></li>
+        <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Team</a></li>
+      </ul>
+      <div id="home-tab-content" class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="introduction">
+          {{ content }}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="howtocite">
+          {% capture howtocite %}{% include howtocite.md %}{% endcapture %}
+          {{ howtocite | markdownify }}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="team">
+          {% capture team %}{% include team.md %}{% endcapture %}
+          {{ team | markdownify }}
+        </div>
+      </div>
     </div>
     <div id="affixContainer">
     <div id="researchQuestions" class="col-md-5 col-md-offset-1 text-center">
