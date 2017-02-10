@@ -75,6 +75,9 @@ ol {
   -webkit-padding-start: 0px;
 }
 
+#home-text-content{
+  z-index: 1;
+}
 .text-content p{
   font-family: 'Crimson', serif;
   font-size: 24px;
@@ -864,10 +867,6 @@ opacity: 1;
 .tableContainer .table>tbody>tr>td>a:hover {
   color: #000;
   text-decoration: none;
-}
-
-#affixContainer{
-    z-index: -1;
 }
 
 #affixContainer.affix{
