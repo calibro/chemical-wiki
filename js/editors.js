@@ -42,7 +42,7 @@ sigma.parsers.json(dataFile, {
 
     var colors = chemicalwiki.colors().qualitative('designer');
     colors.unshift('#84304b');
-    colors.unshift('rgba(248, 248, 248, 0.5)');
+    colors.unshift('rgba(255, 255, 255, 1)');
     var keys = d3.set(sigInst.graph.nodes(),function(d){return d.attributes.SubstanceCat}).values()
     var colorScale = d3.scaleOrdinal().domain(keys).range(colors)
 
