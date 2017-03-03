@@ -76,7 +76,7 @@ sigma.parsers.json(dataFile, {
     sigInst.graph.nodes().forEach(function(e,i){
       e.type = 'border';
       e.color = colorScale(e.attributes.SubstanceCat)
-      if(e.attributes.Type == "User"){
+      if(e.attributes.Type == "User" && e.attributes.SubstanceCat == '#N/A'){
         e.label = 'Editor ' + (i+1)
       }
     });
