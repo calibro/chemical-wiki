@@ -4,7 +4,7 @@ network: true
 category: designer
 published: true
 title: Editors network
-authors:
+authors: How 
   - Louis Dijkstra
   - Giorgio Uboldi
 tools:

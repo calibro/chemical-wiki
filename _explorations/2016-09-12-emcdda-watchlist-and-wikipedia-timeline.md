@@ -2,7 +2,7 @@
 layout: exploration
 category: designer
 published: true
-title: EMCDDA watchlist and Wikipedia timeline
+title: How up to date is the knowledge about designer drugs on Wikipedia?
 authors:
   - Moritz Berning
   - Giorgio Uboldi
@@ -20,7 +20,7 @@ data: watchlist.tsv
 <div class="intro">
 ### Introduction and “How to read”
 
-How up to date is the knowledge about designer drugs on Wikipedia? In order to explore whether Wikipedia is a cutting edge source for designer drugs information, or whether it mainly features well known substances, we compared the appearance of various designer drugs on Wikipedia and with the date they were added to the EMCDDA watch lists. The EMCDDA, or European Monitoring Centre for Drugs and Drug Addiction, is an organization that monitors drugs and drug use in Europe. Designer Drugs are one of the phenomena that the EMDDA focuses on and their appearance and monitoring is one of the key tasks (EMCDDA 2016). In this interactive graph, you can see above an X-axis with a timeline on which different designer drugs appear in time, shown on the Y-axis. The red dot represents the point in time when the drug came on the EMCDDA watch list, the blue dot when it appeared on Wikipedia. The distance between the dots represents the time that has passed in between.
+ In order to explore whether Wikipedia is a cutting edge source for designer drugs information, or whether it mainly features well known substances, we compared the appearance of various designer drugs on Wikipedia and with the date they were added to the EMCDDA watch lists. The EMCDDA, or European Monitoring Centre for Drugs and Drug Addiction, is an organization that monitors drugs and drug use in Europe. Designer Drugs are one of the phenomena that the EMDDA focuses on and their appearance and monitoring is one of the key tasks (EMCDDA 2016). In this interactive graph, you can see above an X-axis with a timeline on which different designer drugs appear in time, shown on the Y-axis. The red dot represents the point in time when the drug came on the EMCDDA watch list, the blue dot when it appeared on Wikipedia. The distance between the dots represents the time that has passed in between.
 
 </div>
 

@@ -3,7 +3,7 @@ layout: exploration
 network: true
 category: designer
 published: true
-title: Network of co-contribution on designer drug articles
+title: Network of co-contributions on designer drug articles
 authors:
   - Louis Dijkstra
   - Lisa Krieg

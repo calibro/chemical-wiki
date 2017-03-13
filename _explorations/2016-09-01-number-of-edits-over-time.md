@@ -12,7 +12,7 @@ tools:
   - '[D3.js](https://d3js.org/)'
 datasources:
   - Wikipedia API, English language, accessed between 11-15th July 2016
-title: Number of edits over time
+title: When the articles have been edited?
 custom_js: edits.js
 data: medical_edits.tsv
 

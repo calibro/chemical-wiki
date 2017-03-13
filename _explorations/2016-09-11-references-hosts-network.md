@@ -3,7 +3,7 @@ layout: exploration
 network: true
 category: designer
 published: true
-title: References hosts network
+title: Which websites are used as sources for the designer drugs articles? 
 authors:
   - Gabriele Colombo
   - Louis Dijkstra

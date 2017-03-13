@@ -2,7 +2,7 @@
 layout: exploration
 category: medical
 published: true
-title: MDMA TOC evolution over time
+title: How has the table of content of the article "MDMA" evolved?
 authors:
   - Matteo Azzi
   - Lisa Krieg

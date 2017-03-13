@@ -2,7 +2,7 @@
 layout: exploration
 category: medical
 published: true
-title: 'MDMA references: organizations hosts overtime'
+title: Which websites are used as sources for the article “MDMA”? 
 authors:
   - Matteo Azzi
   - Giorgio Uboldi

@@ -2,7 +2,7 @@
 layout: exploration
 category: designer
 published: true
-title: Metrics of the designer drugs
+title: An overview on articles about designer drugs
 authors:
   - Giorgio Uboldi
   - Gabriele Colombo

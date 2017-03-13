@@ -2,7 +2,7 @@
 layout: exploration
 category: medical
 published: true
-title: 'Ayahuasca references: hosts mention overtime'
+title: Which websites are used as sources for the article "Ayahuasca"? 
 authors:
   - Gabriele Colombo
   - Natalia Sanchez-Querubin

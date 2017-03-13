@@ -2,7 +2,7 @@
 layout: exploration
 category: medical
 published: true
-title: Ayahuasca TOC evolution over time
+title: How has the table of content of the article "Ayahuasca" evolved?
 authors:
   - Matteo Azzi
   - Lisa Krieg

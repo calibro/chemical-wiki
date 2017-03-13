@@ -2,7 +2,7 @@
 layout: exploration
 category: medical
 published: true
-title: Page size over time
+title: How the page size evolved over time?
 tools:
   - '[Xtools articleinfo](https://tools.wmflabs.org/xtools-articleinfo/)'
   - '[Tableau](http://www.tableau.com/)'

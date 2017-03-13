@@ -2,7 +2,7 @@
 layout: exploration
 category: medical
 published: true
-title: 'MDMA references: field mentions overtime'
+title: Which scientific fields supply the knowledge on MDMA? 
 authors:
   - Natalia Sanchez-Querubin
   - Gabriele Colombo
@@ -21,7 +21,7 @@ data: mdmaFields.tsv
 <div class="intro">
 ### Introduction and “How to read”
 
-Which scientific fields supply the knowledge on which this article is based? We looked at the development of the references over time to answer this question, and to grasp how this has changed during the years. The graph shows the development of references that appear in the MDMA Wikipedia article, sorted by different scientific disciplines or fields. The X-axis represents the time that the article already exists, from 2003 to 2016. On the Y-axis one can see the appearance of sources from various scientific disciplines mentioned in the article with some of them appearing later than others.
+We looked at the development of the references over time to answer this question, and to grasp how this has changed during the years. The graph shows the development of references that appear in the MDMA Wikipedia article, sorted by different scientific disciplines or fields. The X-axis represents the time that the article already exists, from 2003 to 2016. On the Y-axis one can see the appearance of sources from various scientific disciplines mentioned in the article with some of them appearing later than others.
 
 </div>
 
