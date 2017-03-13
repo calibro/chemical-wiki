@@ -12,7 +12,7 @@ baseurl: "/chemical-wiki" # the subpath of your site, e.g. /blog
 url: "http://calibro.github.io" # the base hostname & protocol for your site
 permalink: /:categories/:title
 include: ['_pages']
-analytics: 'xx-xxxxx'
+analytics: 'UA-73425386-4'
 disqus: 'chemicalknowledge'
 # Collections
 collections:
