@@ -355,12 +355,12 @@ opacity: 1;
 }
 
 #researchQuestions{
-  border: 1px solid #D7D7D7;
+  border-left: 1px solid #D7D7D7;
   background: white;
 }
 
 .question {
-  padding: 10px 20px;
+  padding: 40px 20px;
 }
 
 .question h1{
@@ -877,6 +877,7 @@ opacity: 1;
 #affixContainer.affix #researchQuestions,
 #affixContainer.affix-bottom #researchQuestions{
   margin-left: inherit;
+
 }
 
 #affixContainer.affix-bottom{
