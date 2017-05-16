@@ -3,19 +3,18 @@ layout: exploration
 category: medical
 published: true
 authors:
+  - Lisa Krieg
   - Giorgio Uboldi
   - Louis Dijkstra
-  - Lisa Krieg
 tools:
   - '[DMI wikipedia2geo](https://tools.digitalmethods.net/beta/wikipedia2geo/)'
   - '[Tableau](http://www.tableau.com/)'
   - '[D3.js](https://d3js.org/)'
 datasources:
-  - Wikipedia API, English language, accessed between 11-15th July 2016
-title: When the articles have been edited?
+  - 'Wikipedia API, English language, accessed between 11-15th July 2016'
+title: When have the articles been edited?
 custom_js: edits.js
 data: medical_edits.tsv
-
 ---
 {::options auto_ids="false" /}
 {::options parse_block_html="true" /}
