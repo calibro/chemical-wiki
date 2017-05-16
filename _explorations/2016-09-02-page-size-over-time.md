@@ -2,13 +2,13 @@
 layout: exploration
 category: medical
 published: true
-title: How the page size evolved over time?
+title: How did the page size evolve over time?
 tools:
   - '[Xtools articleinfo](https://tools.wmflabs.org/xtools-articleinfo/)'
   - '[Tableau](http://www.tableau.com/)'
   - '[D3.js](https://d3js.org/)'
 datasources:
-  - Wikipedia API, English language, accessed between 11-15th July 2016
+  - 'Wikipedia API, English language, accessed between 11-15th July 2016'
 authors:
   - Giorgio Uboldi
   - Louis Dijkstra
